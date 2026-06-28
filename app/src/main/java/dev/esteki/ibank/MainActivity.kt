@@ -8,7 +8,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import dev.esteki.ibank.ui.AppBottomBar
+import dev.esteki.ibank.ui.MainView
 import dev.esteki.ibank.ui.theme.IBankTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,11 +20,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             IBankTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Box(modifier = Modifier.padding(innerPadding)) {
-
-                    }
-                }
+                MainView()
             }
         }
     }
