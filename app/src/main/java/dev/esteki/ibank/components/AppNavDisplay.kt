@@ -1,4 +1,4 @@
-package dev.esteki.ibank.ui
+package dev.esteki.ibank.components
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -6,6 +6,7 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
+import dev.esteki.ibank.BottomRoute
 
 @Composable
 fun AppNavDisplay(

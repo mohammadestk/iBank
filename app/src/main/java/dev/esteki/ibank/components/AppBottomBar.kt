@@ -1,4 +1,4 @@
-package dev.esteki.ibank.ui
+package dev.esteki.ibank.components
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -12,7 +12,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import dev.esteki.ibank.ui.theme.IBankTheme
+import dev.esteki.ibank.BottomDestinations
+import dev.esteki.ibank.BottomRoute
+import dev.esteki.ibank.theme.IBankTheme
 
 @Composable
 fun AppBottomBar(

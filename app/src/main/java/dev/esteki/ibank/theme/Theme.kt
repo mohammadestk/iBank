@@ -1,4 +1,4 @@
-package dev.esteki.ibank.ui.theme
+package dev.esteki.ibank.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

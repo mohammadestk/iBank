@@ -1,6 +1,4 @@
-package dev.esteki.ibank.ui
-
-import dev.esteki.ibank.R
+package dev.esteki.ibank
 
 sealed class BottomRoute(
     val label: String,

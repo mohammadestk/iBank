@@ -1,4 +1,4 @@
-package dev.esteki.ibank.ui
+package dev.esteki.ibank.components
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsNotSelected
@@ -7,7 +7,9 @@ import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import com.google.common.truth.Truth.assertThat
+import com.google.common.truth.Truth
+import dev.esteki.ibank.BottomDestinations
+import dev.esteki.ibank.BottomRoute
 import org.junit.Rule
 import org.junit.Test
 
@@ -63,7 +65,7 @@ class AppBottomBarTest {
 
         composeTestRule.onNodeWithText(BottomRoute.Settings.label).performClick()
 
-        assertThat(clickedRoute).isSameInstanceAs(BottomRoute.Settings)
+        Truth.assertThat(clickedRoute).isSameInstanceAs(BottomRoute.Settings)
     }
 
     @Test
@@ -80,7 +82,7 @@ class AppBottomBarTest {
 
         composeTestRule.onNodeWithText(BottomRoute.Home.label).performClick()
 
-        assertThat(clickCount).isEqualTo(1)
+        Truth.assertThat(clickCount).isEqualTo(1)
     }
 
     @Test

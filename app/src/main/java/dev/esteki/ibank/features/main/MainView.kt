@@ -1,4 +1,4 @@
-package dev.esteki.ibank.ui
+package dev.esteki.ibank.features.main
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,8 +12,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import dev.esteki.ibank.ui.theme.IBankTheme
+import dev.esteki.ibank.BottomDestinations
+import dev.esteki.ibank.BottomRoute
+import dev.esteki.ibank.components.AppBottomBar
+import dev.esteki.ibank.components.AppNavDisplay
 
 @Composable
 fun MainView() {
