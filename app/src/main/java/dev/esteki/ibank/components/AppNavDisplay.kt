@@ -1,5 +1,6 @@
 package dev.esteki.ibank.components
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.snapshots.SnapshotStateList
@@ -7,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
 import dev.esteki.ibank.BottomRoute
+import dev.esteki.ibank.features.home.HomeScreen
 
 @Composable
 fun AppNavDisplay(
@@ -19,7 +21,7 @@ fun AppNavDisplay(
         onBack = { backStack.removeLastOrNull() },
         entryProvider = entryProvider {
             entry<BottomRoute.Home> { key ->
-                Text(text = key.label)
+                HomeScreen(modifier = Modifier.fillMaxSize())
             }
             entry<BottomRoute.Search> { key ->
                 Text(text = key.label)

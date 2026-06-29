@@ -10,6 +10,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.saveable.rememberSerializable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import dev.esteki.ibank.BottomDestinations
@@ -18,9 +19,9 @@ import dev.esteki.ibank.components.AppBottomBar
 import dev.esteki.ibank.components.AppNavDisplay
 
 @Composable
-fun MainView() {
+fun MainScreen() {
     val backStack = remember { mutableStateListOf<BottomRoute>(BottomDestinations.first()) }
-    var selectedRoute by rememberSaveable { mutableStateOf(BottomDestinations.first()) }
+    var selectedRoute by rememberSerializable { mutableStateOf(BottomDestinations.first()) }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),

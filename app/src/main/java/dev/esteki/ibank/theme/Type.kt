@@ -1,6 +1,10 @@
 package dev.esteki.ibank.theme
 
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -77,7 +81,7 @@ val Typography = Typography(
  *
  *   Text("Hello", style = AppTextStyles.title1)
  */
-object AppTextStyles {
+object AppTypography {
     val title1 = TextStyle(
         fontFamily = AppFontFamily,
         fontWeight = FontWeight.SemiBold,
@@ -130,3 +134,11 @@ object AppTextStyles {
         lineHeight = 20.sp
     )
 }
+
+// CompositionLocal to provide sizing configurations
+val LocalTypography = staticCompositionLocalOf<AppTypography> {
+    AppTypography
+}
+
+val MaterialTheme.iTypography
+    @Composable @ReadOnlyComposable get() = LocalTypography.current
