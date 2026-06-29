@@ -22,7 +22,7 @@ sealed class BottomRoute(
     data object Message : BottomRoute(
         label = "Message",
         icon = R.drawable.message,
-        contentDescription = "Messages",
+        contentDescription = "Message",
     )
 
     data object Settings : BottomRoute(
