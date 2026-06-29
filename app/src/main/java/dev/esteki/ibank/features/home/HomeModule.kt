@@ -13,8 +13,8 @@ object HomeModule {
     @Provides
     @ViewModelScoped
     fun provideHomeUiState(): HomeUiState = HomeUiState(
-        avatar = "https://picsum.photos/200",
-        title = "Hi, Mohammad Esteki!",
-        notificationCount = 5,
+        avatar = "",
+        title = "",
+        notificationCount = 0,
     )
 }

@@ -6,34 +6,24 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.saveable.rememberSerializable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.esteki.ibank.BottomDestinations
-import dev.esteki.ibank.BottomRoute
 import dev.esteki.ibank.components.AppBottomBar
 import dev.esteki.ibank.components.AppNavDisplay
 
 @Composable
-fun MainScreen() {
-    val backStack = remember { mutableStateListOf<BottomRoute>(BottomDestinations.first()) }
-    var selectedRoute by rememberSerializable { mutableStateOf(BottomDestinations.first()) }
+fun MainScreen(viewModel: MainViewModel = viewModel()) {
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         bottomBar = {
             AppBottomBar(
                 modifier = Modifier.fillMaxWidth(),
-                selectedRoute = selectedRoute,
-                onItemClick = { route ->
-                    backStack.removeLastOrNull()
-                    backStack.add(route)
-                    selectedRoute = route
-                },
+                selectedRoute = uiState.selectedRoute,
+                onItemClick = viewModel::onRouteSelected,
                 items = BottomDestinations
             )
         },
@@ -42,7 +32,7 @@ fun MainScreen() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding),
-            backStack = backStack
+            backStack = uiState.backStack
         )
     }
 }
