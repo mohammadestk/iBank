@@ -37,10 +37,3 @@ sealed class BottomRoute(
         contentDescription = "Settings",
     )
 }
-
-val BottomDestinations: List<BottomRoute> = listOf(
-    BottomRoute.Home,
-    BottomRoute.Search,
-    BottomRoute.Message,
-    BottomRoute.Settings
-)

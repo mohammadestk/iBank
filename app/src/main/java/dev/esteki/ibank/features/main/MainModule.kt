@@ -6,7 +6,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
-import dev.esteki.ibank.BottomDestinations
 import dev.esteki.ibank.BottomRoute
 
 @Module
@@ -16,9 +15,8 @@ object MainModule {
     @Provides
     @ViewModelScoped
     fun provideMainUiState(): MainUiState = MainUiState(
-        selectedRoute = BottomDestinations.first(),
-        backStack = mutableStateListOf<BottomRoute>().apply {
-            add(BottomDestinations.first())
-        },
+        destinations = emptyList(),
+        selectedRoute = BottomRoute.Home,
+        backStack = mutableStateListOf(),
     )
 }

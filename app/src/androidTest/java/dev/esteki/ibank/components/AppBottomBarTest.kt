@@ -8,17 +8,23 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import com.google.common.truth.Truth
-import dev.esteki.ibank.BottomDestinations
 import dev.esteki.ibank.BottomRoute
 import org.junit.Rule
 import org.junit.Test
+
+
 
 class AppBottomBarTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()
 
-    private val testItems = BottomDestinations
+    private val testItems = listOf(
+        BottomRoute.Home,
+        BottomRoute.Search,
+        BottomRoute.Message,
+        BottomRoute.Settings,
+    )
 
     @Test
     fun allItemsAreDisplayed() {

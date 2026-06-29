@@ -12,9 +12,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import dev.esteki.ibank.BottomDestinations
 import dev.esteki.ibank.BottomRoute
 import dev.esteki.ibank.theme.IBankTheme
+
+private val PreviewDestinations = listOf(
+    BottomRoute.Home,
+    BottomRoute.Search,
+    BottomRoute.Message,
+    BottomRoute.Settings,
+)
 
 @Composable
 fun AppBottomBar(
@@ -49,14 +55,14 @@ fun AppBottomBar(
 @Composable
 private fun AppBottomBarPreview() {
     IBankTheme {
-        var selectedRoute by remember { mutableStateOf(BottomDestinations.first()) }
+        var selectedRoute by remember { mutableStateOf(PreviewDestinations.first()) }
 
         AppBottomBar(
             selectedRoute = selectedRoute,
             onItemClick = {
                 selectedRoute = it
             },
-            items = BottomDestinations,
+            items = PreviewDestinations,
         )
     }
 }

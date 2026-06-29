@@ -9,7 +9,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import dev.esteki.ibank.BottomDestinations
 import dev.esteki.ibank.components.AppBottomBar
 import dev.esteki.ibank.components.AppNavDisplay
 
@@ -24,7 +23,7 @@ fun MainScreen(viewModel: MainViewModel = viewModel()) {
                 modifier = Modifier.fillMaxWidth(),
                 selectedRoute = uiState.selectedRoute,
                 onItemClick = viewModel::onRouteSelected,
-                items = BottomDestinations
+                items = uiState.destinations
             )
         },
     ) { innerPadding ->
