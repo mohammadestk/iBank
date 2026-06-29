@@ -1,29 +1,26 @@
 package dev.esteki.ibank.features.home
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import dev.esteki.ibank.theme.IBankTheme
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier) {
+fun HomeScreen(
+    modifier: Modifier = Modifier,
+    viewModel: HomeViewModel = viewModel()
+) {
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+
     Column(modifier = modifier) {
         HomeTopBar(
             modifier = Modifier.fillMaxWidth(),
-            avatar = "https://picsum.photos/200",
-            title = "Hi, Mohammad Esteki!",
-            notificationCount = 5,
+            avatar = uiState.avatar,
+            title = uiState.title,
+            notificationCount = uiState.notificationCount,
         )
-    }
-}
-
-@Preview
-@Composable
-private fun HomeScreenPreview() {
-    IBankTheme {
-        HomeScreen(modifier = Modifier.fillMaxSize())
     }
 }
