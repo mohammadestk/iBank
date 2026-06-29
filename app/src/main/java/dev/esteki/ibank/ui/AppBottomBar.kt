@@ -25,7 +25,7 @@ fun AppBottomBar(onItemClick: (BottomRoute) -> Unit) {
                 selected = index == selectedIndex,
                 onClick = {
                     selectedIndex = index
-                    onItemClick(BottomDestinations[index])
+                    onItemClick(route)
                 },
                 label = {
                     Text(text = route.label)
