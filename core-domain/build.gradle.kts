@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "dev.esteki.ibank.core.data"
+    namespace = "dev.esteki.ibank.core.domain"
     compileSdk {
         version = release(37) {
             minorApiLevel = 0
@@ -23,8 +23,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-domain"))
-    implementation(project(":core-presentation"))
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
 }

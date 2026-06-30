@@ -10,132 +10,151 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// Swap this for your actual brand font once you have one. Shipping
-// FontFamily.Default on a custom color brand is a giveaway the type
-// system was an afterthought.
-private val AppFontFamily = FontFamily.Default
+// Font families
+val DisplayFontFamily = FontFamily.Default // Manrope
+val BodyFontFamily = FontFamily.Default    // Inter
+val MonoFontFamily = FontFamily.Monospace  // JetBrains Mono
 
+// M3 Typography
 val Typography = Typography(
-    titleLarge = TextStyle(
-        fontFamily = AppFontFamily,
-        fontWeight = FontWeight.SemiBold,
+    displayLarge = TextStyle(
+        fontFamily = DisplayFontFamily,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 57.sp,
+        lineHeight = 64.sp,
+        letterSpacing = (-0.015).sp
+    ),
+    headlineLarge = TextStyle(
+        fontFamily = DisplayFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 32.sp,
+        lineHeight = 40.sp,
+    ),
+    headlineSmall = TextStyle(
+        fontFamily = DisplayFontFamily,
+        fontWeight = FontWeight.Bold,
         fontSize = 24.sp,
         lineHeight = 32.sp,
-        letterSpacing = 0.sp
     ),
-    titleMedium = TextStyle(
-        fontFamily = AppFontFamily,
-        fontWeight = FontWeight.SemiBold,
+    titleLarge = TextStyle(
+        fontFamily = DisplayFontFamily,
+        fontWeight = FontWeight.Bold,
         fontSize = 20.sp,
         lineHeight = 28.sp,
-        letterSpacing = 0.sp
     ),
-    titleSmall = TextStyle(
-        fontFamily = AppFontFamily,
+    titleMedium = TextStyle(
+        fontFamily = DisplayFontFamily,
         fontWeight = FontWeight.SemiBold,
         fontSize = 16.sp,
         lineHeight = 24.sp,
-        letterSpacing = 0.sp
+    ),
+    titleSmall = TextStyle(
+        fontFamily = DisplayFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
     ),
     bodyLarge = TextStyle(
-        fontFamily = AppFontFamily,
-        fontWeight = FontWeight.Medium,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.2.sp
-    ),
-    bodyMedium = TextStyle(
-        fontFamily = AppFontFamily,
+        fontFamily = BodyFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         lineHeight = 24.sp,
-        letterSpacing = 0.2.sp
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = BodyFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
     ),
     bodySmall = TextStyle(
-        fontFamily = AppFontFamily,
-        fontWeight = FontWeight.Medium,
-        fontSize = 14.sp,
-        lineHeight = 20.sp,
-        letterSpacing = 0.2.sp
+        fontFamily = BodyFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
     ),
     labelLarge = TextStyle(
-        fontFamily = AppFontFamily,
-        fontWeight = FontWeight.Medium,
+        fontFamily = BodyFontFamily,
+        fontWeight = FontWeight.SemiBold,
         fontSize = 14.sp,
         lineHeight = 20.sp,
-        letterSpacing = 0.1.sp
     ),
-    labelSmall = TextStyle(
-        fontFamily = AppFontFamily,
+    labelMedium = TextStyle(
+        fontFamily = BodyFontFamily,
         fontWeight = FontWeight.SemiBold,
         fontSize = 12.sp,
         lineHeight = 16.sp,
-        letterSpacing = 0.3.sp
-    )
+    ),
+    labelSmall = TextStyle(
+        fontFamily = BodyFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 10.sp,
+        lineHeight = 14.sp,
+    ),
 )
 
 /**
- * Direct 1:1 mapping of the design spec's named roles. Use these when
- * you want to reference "Body 3" or "Caption 1" explicitly in code
- * instead of guessing which M3 slot it landed in above.
- *
- *   Text("Hello", style = AppTextStyles.title1)
+ * Custom typography for design-spec named roles.
+ * Use these for explicit design token references:
+ *   Text("Hello", style = AppTypography.displayLarge)
  */
 object AppTypography {
-    val title1 = TextStyle(
-        fontFamily = AppFontFamily,
-        fontWeight = FontWeight.SemiBold,
+    val displayLarge = TextStyle(
+        fontFamily = DisplayFontFamily,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 57.sp,
+        lineHeight = 64.sp,
+        letterSpacing = (-0.015).sp
+    )
+    val headlineLarge = TextStyle(
+        fontFamily = DisplayFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 32.sp,
+        lineHeight = 40.sp,
+    )
+    val headlineSmall = TextStyle(
+        fontFamily = DisplayFontFamily,
+        fontWeight = FontWeight.Bold,
         fontSize = 24.sp,
-        lineHeight = 32.sp
+        lineHeight = 32.sp,
     )
-    val title2 = TextStyle(
-        fontFamily = AppFontFamily,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 20.sp,
-        lineHeight = 28.sp
-    )
-    val title3 = TextStyle(
-        fontFamily = AppFontFamily,
+    val titleMedium = TextStyle(
+        fontFamily = DisplayFontFamily,
         fontWeight = FontWeight.SemiBold,
         fontSize = 16.sp,
-        lineHeight = 24.sp
+        lineHeight = 24.sp,
     )
-    val body1 = TextStyle(
-        fontFamily = AppFontFamily,
-        fontWeight = FontWeight.Medium,
-        fontSize = 16.sp,
-        lineHeight = 24.sp
-    )
-    val body2 = TextStyle(
-        fontFamily = AppFontFamily,
+    val bodyLarge = TextStyle(
+        fontFamily = BodyFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        lineHeight = 24.sp
+        lineHeight = 24.sp,
     )
-    val body3 = TextStyle(
-        fontFamily = AppFontFamily,
-        fontWeight = FontWeight.Medium,
+    val bodyMedium = TextStyle(
+        fontFamily = BodyFontFamily,
+        fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
-        lineHeight = 20.sp
+        lineHeight = 20.sp,
     )
-    val caption1 = TextStyle(
-        fontFamily = AppFontFamily,
+    val labelLarge = TextStyle(
+        fontFamily = BodyFontFamily,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 12.sp,
-        lineHeight = 16.sp
-    )
-    // NOTE: identical to body3 as specified (Medium 14px). Kept as a
-    // separate token only because the spec names it separately — flag
-    // this with design, don't just assume it's intentional.
-    val caption2 = TextStyle(
-        fontFamily = AppFontFamily,
-        fontWeight = FontWeight.Medium,
         fontSize = 14.sp,
-        lineHeight = 20.sp
+        lineHeight = 20.sp,
+    )
+    val numeral = TextStyle(
+        fontFamily = MonoFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 18.sp,
+        lineHeight = 24.sp,
+    )
+    val numeralLarge = TextStyle(
+        fontFamily = MonoFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 30.sp,
+        lineHeight = 36.sp,
     )
 }
 
-// CompositionLocal to provide sizing configurations
 val LocalTypography = staticCompositionLocalOf<AppTypography> {
     AppTypography
 }

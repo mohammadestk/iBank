@@ -1,10 +1,9 @@
 # iBank — Agent Guide
 
 ## Project Overview
-- Single-module Android app (moving to multi-module), package `dev.esteki.ibank`
+- Multi-module Android app, package `dev.esteki.ibank`
 - 4 screens: Home (implemented), Search, Message, Settings (stubs)
-- Design specs: `specs/ui/` (SVG files)
-- No remote/data layer yet — abstract layer only
+- Design system: `specs/ui/meridian-design-system.html` (Meridian — Material 3 Banking)
 
 ## Tech Stack (versions matter)
 - Kotlin 2.4.0, AGP 9.2.1, JVM 21
@@ -24,9 +23,10 @@
 
 **Pattern:** Clean Architecture + MVI + Multi-module
 
-**Module structure (target):**
-- `core-presentation` — theme, shared composables, base ViewModels
-- `core-data` — repository interfaces, data source interfaces, models
+**Module structure:**
+- `core-presentation` — theme, shared composables
+- `core-domain` — use cases, repository interfaces, domain models
+- `core-data` — repository implementations, data sources, DI bindings
 - `feature-<name>` — one module per feature (e.g., `feature-home`, `feature-search`)
 
 **MVI per feature:**
@@ -34,6 +34,7 @@
 - `*ViewModel.kt` — processes intents, produces single `@Stable` UI state
 - `*Module.kt` — Hilt `@InstallIn(ViewModelComponent::class)` provides initial state
 - UI state: `@Stable` data class, exposed via `StateFlow`, collected with `collectAsStateWithLifecycle()`
+- Result handling: `*Result` sealed interface (`Idle`, `Loading`, `Success`, `Failure`)
 
 **Clean Architecture layers:**
 - UseCase → Repository (interface) → LocalDataSource / RemoteDataSource

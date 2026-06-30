@@ -9,99 +9,87 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 
-/**
- * NOTE: These schemes are built directly from the provided brand swatches,
- * NOT from a generated M3 tonal palette. Contrast ratios below are eyeballed
- * against WCAG-ish targets but you should verify with the Material Theme
- * Builder or a contrast checker before shipping, especially:
- *  - onPrimaryContainer on Primary40 (#A8A3D7)
- *  - onSurfaceVariant on Neutral20 (#E0E0E0)
- */
-
 private val LightColorScheme = lightColorScheme(
-    primary = Primary90,
-    onPrimary = NeutralWhite,
-    primaryContainer = Primary40,
-    onPrimaryContainer = Primary90,
+    primary = Primary40,
+    onPrimary = Primary100,
+    primaryContainer = Primary90,
+    onPrimaryContainer = Primary10,
 
-    secondary = Primary70,
-    onSecondary = NeutralWhite,
-    secondaryContainer = Primary10,
-    onSecondaryContainer = Primary90,
+    secondary = Secondary40,
+    onSecondary = Secondary100,
+    secondaryContainer = Secondary90,
+    onSecondaryContainer = Secondary10,
 
-    tertiary = SemanticAccent,
-    onTertiary = NeutralWhite,
-    tertiaryContainer = SemanticWarning,
-    onTertiaryContainer = Neutral90,
+    tertiary = Tertiary50,
+    onTertiary = Tertiary100,
+    tertiaryContainer = Tertiary90,
+    onTertiaryContainer = Tertiary10,
 
-    error = SemanticError,
-    onError = NeutralWhite,
-    errorContainer = Color(0xFFFFD9DF),
-    onErrorContainer = SemanticError,
+    error = Error40,
+    onError = Error100,
+    errorContainer = Error90,
+    onErrorContainer = Error10,
 
-    background = NeutralWhite,
-    onBackground = Neutral90,
+    background = Neutral99,
+    onBackground = Neutral10,
 
-    surface = NeutralWhite,
-    onSurface = Neutral90,
-    surfaceVariant = Neutral20,
-    onSurfaceVariant = Neutral60a,
+    surface = Neutral99,
+    onSurface = Neutral10,
+    surfaceVariant = NeutralVariant90,
+    onSurfaceVariant = NeutralVariant30,
 
-    outline = Neutral60b,
-    outlineVariant = Neutral30,
+    outline = NeutralVariant50,
+    outlineVariant = NeutralVariant80,
 
-    inverseSurface = Neutral90,
-    inverseOnSurface = NeutralWhite,
-    inversePrimary = Primary40,
+    inverseSurface = Neutral10,
+    inverseOnSurface = Neutral99,
+    inversePrimary = Primary80,
 )
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Primary40,
-    onPrimary = Primary90,
-    primaryContainer = Primary70,
-    onPrimaryContainer = Primary10,
+    primary = Primary80,
+    onPrimary = Primary20,
+    primaryContainer = Primary30,
+    onPrimaryContainer = Primary90,
 
-    secondary = Primary70,
-    onSecondary = NeutralWhite,
-    secondaryContainer = Color(0xFF1A1356),
-    onSecondaryContainer = Primary40,
+    secondary = Secondary80,
+    onSecondary = Secondary20,
+    secondaryContainer = Secondary30,
+    onSecondaryContainer = Secondary90,
 
-    tertiary = SemanticWarning,
-    onTertiary = Neutral90,
-    tertiaryContainer = SemanticAccent,
-    onTertiaryContainer = NeutralWhite,
+    tertiary = Tertiary80,
+    onTertiary = Tertiary20,
+    tertiaryContainer = Tertiary30,
+    onTertiaryContainer = Tertiary90,
 
-    error = SemanticError,
-    onError = Neutral90,
-    errorContainer = Color(0xFF7A1B30),
-    onErrorContainer = Color(0xFFFFD9DF),
+    error = Error80,
+    onError = Error20,
+    errorContainer = Error30,
+    onErrorContainer = Error90,
 
-    background = Neutral90,
-    onBackground = NeutralWhite,
+    background = Neutral10,
+    onBackground = Neutral90,
 
-    surface = Color(0xFF1F1F1F),
-    onSurface = NeutralWhite,
-    surfaceVariant = Color(0xFF474747),
-    onSurfaceVariant = Neutral30,
+    surface = Neutral10,
+    onSurface = Neutral90,
+    surfaceVariant = NeutralVariant30,
+    onSurfaceVariant = NeutralVariant80,
 
-    outline = Neutral60b,
-    outlineVariant = Color(0xFF474747),
+    outline = NeutralVariant60,
+    outlineVariant = NeutralVariant30,
 
-    inverseSurface = NeutralWhite,
-    inverseOnSurface = Neutral90,
-    inversePrimary = Primary90,
+    inverseSurface = Neutral90,
+    inverseOnSurface = Neutral10,
+    inversePrimary = Primary40,
 )
-
 
 @Composable
 fun IBankTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
@@ -110,7 +98,6 @@ fun IBankTheme(
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
-
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }

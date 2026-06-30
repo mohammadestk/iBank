@@ -26,4 +26,5 @@ rootProject.name = "iBank"
 include(":app")
 include(":core-presentation")
 include(":core-data")
+include(":core-domain")
 include(":feature-home")
