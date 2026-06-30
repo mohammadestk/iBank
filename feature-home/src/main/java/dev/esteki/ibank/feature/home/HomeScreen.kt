@@ -109,7 +109,7 @@ private fun HomeContent(
             Spacer(modifier = Modifier.height(16.dp))
         }
 
-        items(uiState.accounts) { account ->
+        items(uiState.accounts, key = { it.id }) { account ->
             BalanceCard(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -151,7 +151,7 @@ private fun HomeContent(
             Spacer(modifier = Modifier.height(8.dp))
         }
 
-        items(uiState.transactions) { transaction ->
+        items(uiState.transactions, key = { it.id }) { transaction ->
             TransactionItem(
                 modifier = Modifier
                     .fillMaxWidth()
