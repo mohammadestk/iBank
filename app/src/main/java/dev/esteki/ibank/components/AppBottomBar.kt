@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import dev.esteki.ibank.BottomRoute
-import dev.esteki.ibank.theme.IBankTheme
+import dev.esteki.ibank.core.presentation.theme.IBankTheme
 
 private val PreviewDestinations = listOf(
     BottomRoute.Home,

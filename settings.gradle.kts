@@ -24,3 +24,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "iBank"
 include(":app")
+include(":core-presentation")
+include(":core-data")
+include(":feature-home")

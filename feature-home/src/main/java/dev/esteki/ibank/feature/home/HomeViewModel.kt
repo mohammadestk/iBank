@@ -1,4 +1,4 @@
-package dev.esteki.ibank.features.home
+package dev.esteki.ibank.feature.home
 
 import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel

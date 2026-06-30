@@ -1,4 +1,4 @@
-package dev.esteki.ibank.theme
+package dev.esteki.ibank.core.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

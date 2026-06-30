@@ -1,4 +1,4 @@
-package dev.esteki.ibank.theme
+package dev.esteki.ibank.core.presentation.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography

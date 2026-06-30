@@ -1,4 +1,4 @@
-package dev.esteki.ibank.features.home
+package dev.esteki.ibank.feature.home
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth

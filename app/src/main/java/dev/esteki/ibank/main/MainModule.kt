@@ -1,4 +1,4 @@
-package dev.esteki.ibank.features.main
+package dev.esteki.ibank.main
 
 import androidx.compose.runtime.mutableStateListOf
 import dagger.Module

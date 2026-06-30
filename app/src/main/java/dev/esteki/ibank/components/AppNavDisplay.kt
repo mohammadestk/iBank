@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
 import dev.esteki.ibank.BottomRoute
-import dev.esteki.ibank.features.home.HomeScreen
+import dev.esteki.ibank.feature.home.HomeScreen
 
 @Composable
 fun AppNavDisplay(

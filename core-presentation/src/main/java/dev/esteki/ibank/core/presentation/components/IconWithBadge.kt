@@ -1,4 +1,4 @@
-package dev.esteki.ibank.components
+package dev.esteki.ibank.core.presentation.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.Badge
@@ -12,8 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
-import dev.esteki.ibank.theme.IBankTheme
 
 @Composable
 fun IconWithBadge(
@@ -53,18 +51,5 @@ fun IconWithBadge(
         IconButton(onClick = onClick, modifier = modifier) { iconContent() }
     } else {
         Box(modifier = modifier) { iconContent() }
-    }
-}
-
-@Preview
-@Composable
-private fun IconWithBadgePreview() {
-    IBankTheme {
-        IconWithBadge(
-            icon = dev.esteki.ibank.R.drawable.ring,
-            badgeCount = 5,
-            contentDescription = "Notifications",
-            onClick = { },
-        )
     }
 }

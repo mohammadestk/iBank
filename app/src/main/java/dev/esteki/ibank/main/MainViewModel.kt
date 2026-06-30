@@ -1,4 +1,4 @@
-package dev.esteki.ibank.features.main
+package dev.esteki.ibank.main
 
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.snapshots.SnapshotStateList
