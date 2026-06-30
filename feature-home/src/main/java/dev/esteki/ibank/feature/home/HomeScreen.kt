@@ -75,7 +75,7 @@ fun HomeScreen(
                 contentAlignment = Alignment.Center,
             ) {
                 Text(
-                    text = (uiState.result as HomeResult.Failure).error,
+                    text = (uiState.result as HomeResult.Failure).message,
                     color = MaterialTheme.colorScheme.error,
                 )
             }

@@ -4,6 +4,9 @@ import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dev.esteki.ibank.core.domain.common.AppError
+import dev.esteki.ibank.core.domain.common.Result
+import dev.esteki.ibank.core.domain.common.toUserMessage
 import dev.esteki.ibank.core.domain.home.GetHomeDataUseCase
 import dev.esteki.ibank.core.domain.model.Account
 import dev.esteki.ibank.core.domain.model.QuickAction
@@ -31,7 +34,7 @@ sealed interface HomeResult {
         val avatarUrl: String,
         val notificationCount: Int,
     ) : HomeResult
-    data class Failure(val error: String) : HomeResult
+    data class Failure(val error: AppError, val message: String) : HomeResult
 }
 
 sealed interface HomeIntent {
@@ -66,27 +69,33 @@ class HomeViewModel @Inject constructor(
     private fun loadHomeData() {
         viewModelScope.launch {
             _uiState.update { it.copy(result = HomeResult.Loading) }
-            val result = runCatching { getHomeDataUseCase() }
-            result.onSuccess { data ->
-                _uiState.update {
-                    it.copy(
-                        result = HomeResult.Success(
-                            userName = data.profile.name,
-                            avatarUrl = data.profile.avatarUrl,
-                            notificationCount = data.profile.notificationCount,
-                        ),
-                        accounts = data.accounts,
-                        quickActions = data.quickActions,
-                        transactions = data.transactions,
-                    )
-                }
-            }.onFailure { e ->
-                _uiState.update {
-                    it.copy(
-                        result = HomeResult.Failure(
-                            error = e.message ?: "An unexpected error occurred",
-                        ),
-                    )
+            getHomeDataUseCase().collect { result ->
+                when (result) {
+                    is Result.Success -> {
+                        val data = result.data
+                        _uiState.update {
+                            it.copy(
+                                result = HomeResult.Success(
+                                    userName = data.profile.name,
+                                    avatarUrl = data.profile.avatarUrl,
+                                    notificationCount = data.profile.notificationCount,
+                                ),
+                                accounts = data.accounts,
+                                quickActions = data.quickActions,
+                                transactions = data.transactions,
+                            )
+                        }
+                    }
+                    is Result.Failure -> {
+                        _uiState.update {
+                            it.copy(
+                                result = HomeResult.Failure(
+                                    error = result.error,
+                                    message = result.error.toUserMessage(),
+                                ),
+                            )
+                        }
+                    }
                 }
             }
         }
