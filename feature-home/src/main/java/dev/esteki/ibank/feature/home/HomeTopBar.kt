@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import dev.esteki.ibank.core.presentation.theme.iTypography
+
 
 @Composable
 fun HomeTopBar(
@@ -36,13 +36,13 @@ fun HomeTopBar(
         Column(modifier = Modifier.weight(1f)) {
             Text(
                 text = "Good evening",
-                style = MaterialTheme.iTypography.bodyMedium.copy(
+                style = MaterialTheme.typography.bodyMedium.copy(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 ),
             )
             Text(
                 text = userName,
-                style = MaterialTheme.iTypography.headlineSmall,
+                style = MaterialTheme.typography.headlineSmall,
             )
         }
 

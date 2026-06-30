@@ -41,7 +41,6 @@
 - No remote implementations yet — use fake/stub data sources
 
 ## Key Conventions
-- Theme: use `MaterialTheme.iTypography` (custom `AppTypography`) for design-spec text styles, NOT `MaterialTheme.typography`
 - Layout direction forced LTR in `IBankTheme` (no RTL)
 - Dynamic color disabled by default
 - Routes: `BottomRoute` sealed class with `@Serializable` (Navigation 3 requires kotlinx.serialization)

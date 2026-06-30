@@ -38,7 +38,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.esteki.ibank.core.domain.model.Account
 import dev.esteki.ibank.core.domain.model.QuickAction
 import dev.esteki.ibank.core.domain.model.Transaction
-import dev.esteki.ibank.core.presentation.theme.iTypography
 import java.text.NumberFormat
 import java.util.*
 
@@ -182,7 +181,7 @@ private fun BalanceCard(
         ) {
             Text(
                 text = "TOTAL BALANCE",
-                style = MaterialTheme.iTypography.bodyMedium.copy(
+                style = MaterialTheme.typography.bodyMedium.copy(
                     color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.8f),
                     letterSpacing = 0.04.sp,
                 ),
@@ -190,7 +189,7 @@ private fun BalanceCard(
             Spacer(modifier = Modifier.height(6.dp))
             Text(
                 text = formatCurrency(account.balance, account.currency),
-                style = MaterialTheme.iTypography.numeralLarge.copy(
+                style = MaterialTheme.typography.displayLarge.copy(
                     color = MaterialTheme.colorScheme.onPrimary,
                 ),
             )
@@ -204,7 +203,7 @@ private fun BalanceCard(
             ) {
                 Text(
                     text = "▲ 2.4% this month",
-                    style = MaterialTheme.iTypography.labelLarge.copy(
+                    style = MaterialTheme.typography.labelLarge.copy(
                         color = MaterialTheme.colorScheme.onPrimary,
                     ),
                 )
@@ -261,7 +260,7 @@ private fun QuickActionItem(
         Spacer(modifier = Modifier.height(6.dp))
         Text(
             text = action.label,
-            style = MaterialTheme.iTypography.labelLarge,
+            style = MaterialTheme.typography.labelLarge,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
     }
@@ -281,14 +280,14 @@ private fun SectionHeader(
     ) {
         Text(
             text = title,
-            style = MaterialTheme.iTypography.titleMedium,
+            style = MaterialTheme.typography.titleMedium,
         )
         Text(
             modifier = Modifier
                 .clickable(onClick = onActionClick)
                 .padding(2.dp),
             text = actionText,
-            style = MaterialTheme.iTypography.labelLarge.copy(
+            style = MaterialTheme.typography.labelLarge.copy(
                 color = MaterialTheme.colorScheme.primary,
             ),
         )
@@ -324,20 +323,20 @@ private fun TransactionItem(
         Column(modifier = Modifier.weight(1f)) {
             Text(
                 text = transaction.name,
-                style = MaterialTheme.iTypography.bodyLarge.copy(
+                style = MaterialTheme.typography.bodyLarge.copy(
                     fontWeight = FontWeight.SemiBold,
                 ),
             )
             Text(
                 text = transaction.description,
-                style = MaterialTheme.iTypography.bodyMedium.copy(
+                style = MaterialTheme.typography.bodyMedium.copy(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 ),
             )
         }
         Text(
             text = formatTransactionAmount(transaction.amount, transaction.isPositive),
-            style = MaterialTheme.iTypography.numeral.copy(
+            style = MaterialTheme.typography.labelLarge.copy(
                 color = if (transaction.isPositive) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
             ),
         )

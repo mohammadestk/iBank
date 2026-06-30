@@ -104,7 +104,6 @@ fun IBankTheme(
 
     CompositionLocalProvider(
         LocalLayoutDirection provides LayoutDirection.Ltr,
-        LocalTypography provides AppTypography,
     ) {
         MaterialTheme(
             colorScheme = colorScheme,
