@@ -21,7 +21,7 @@ class FakeHomeRepository @Inject constructor() : HomeRepository {
         Result.Success(
             UserProfile(
                 id = "1",
-                name = "Aram",
+                name = "Mohammad",
                 avatarUrl = "",
                 notificationCount = 5,
             )
