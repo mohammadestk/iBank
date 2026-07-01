@@ -44,6 +44,9 @@ dependencies {
     implementation(project(":core-presentation"))
     implementation(project(":core-data"))
     implementation(project(":feature-home"))
+    implementation(project(":feature-search"))
+    implementation(project(":feature-message"))
+    implementation(project(":feature-settings"))
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
