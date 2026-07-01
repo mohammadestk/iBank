@@ -14,8 +14,9 @@ import dev.esteki.ibank.core.domain.model.Transaction
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @Stable
@@ -67,9 +68,9 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun loadHomeData() {
-        viewModelScope.launch {
-            _uiState.update { it.copy(result = HomeResult.Loading) }
-            getHomeDataUseCase().collect { result ->
+        _uiState.update { it.copy(result = HomeResult.Loading) }
+        getHomeDataUseCase()
+            .onEach { result ->
                 when (result) {
                     is Result.Success -> {
                         val data = result.data
@@ -98,7 +99,7 @@ class HomeViewModel @Inject constructor(
                     }
                 }
             }
-        }
+            .launchIn(viewModelScope)
     }
 
     private fun handleQuickAction(action: QuickAction) {
