@@ -1,4 +1,4 @@
-package dev.esteki.ibank.components
+package dev.esteki.ibank.core.presentation.components
 
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertHasNoClickAction
@@ -8,8 +8,7 @@ import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import dev.esteki.ibank.R
-import dev.esteki.ibank.core.presentation.components.IconWithBadge
+import dev.esteki.ibank.core.presentation.R
 import org.junit.Rule
 import org.junit.Test
 
@@ -22,7 +21,7 @@ class IconWithBadgeTest {
     fun badgeCount_displaysCorrectNumber() {
         composeTestRule.setContent {
             IconWithBadge(
-                icon = R.drawable.ring,
+                icon = R.drawable.ic_ring,
                 badgeCount = 7,
                 contentDescription = "Notifications"
             )
@@ -35,7 +34,7 @@ class IconWithBadgeTest {
     fun badgeCount_over99_showsCappedLabel() {
         composeTestRule.setContent {
             IconWithBadge(
-                icon = R.drawable.ring,
+                icon = R.drawable.ic_ring,
                 badgeCount = 150,
                 contentDescription = "Notifications"
             )
@@ -49,7 +48,7 @@ class IconWithBadgeTest {
     fun badgeCount_zero_doesNotShowBadge() {
         composeTestRule.setContent {
             IconWithBadge(
-                icon = R.drawable.ring,
+                icon = R.drawable.ic_ring,
                 badgeCount = 0,
                 contentDescription = "Notifications"
             )
@@ -64,7 +63,7 @@ class IconWithBadgeTest {
     fun badgeCount_null_showsDotIndicator_noText() {
         composeTestRule.setContent {
             IconWithBadge(
-                icon = R.drawable.ring,
+                icon = R.drawable.ic_ring,
                 badgeCount = null,
                 contentDescription = "Notifications"
             )
@@ -81,7 +80,7 @@ class IconWithBadgeTest {
 
         composeTestRule.setContent {
             IconWithBadge(
-                icon = R.drawable.ring,
+                icon = R.drawable.ic_ring,
                 badgeCount = 3,
                 contentDescription = "Notifications",
                 onClick = { clicked = true }
@@ -97,7 +96,7 @@ class IconWithBadgeTest {
     fun withoutOnClick_isNotClickable() {
         composeTestRule.setContent {
             IconWithBadge(
-                icon = R.drawable.ring,
+                icon = R.drawable.ic_ring,
                 badgeCount = 3,
                 contentDescription = "Notifications",
                 onClick = null
@@ -112,7 +111,7 @@ class IconWithBadgeTest {
     fun contentDescription_isAppliedToIcon() {
         composeTestRule.setContent {
             IconWithBadge(
-                icon = R.drawable.ring,
+                icon = R.drawable.ic_ring,
                 badgeCount = 5,
                 contentDescription = "Notifications"
             )

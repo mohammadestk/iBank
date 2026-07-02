@@ -56,7 +56,7 @@ fun HomeTopBar(
         ) {
             Icon(
                 modifier = Modifier.size(20.dp),
-                painter = painterResource(dev.esteki.ibank.feature.home.R.drawable.ring),
+                painter = painterResource(dev.esteki.ibank.feature.home.R.drawable.ic_ring),
                 contentDescription = "Notifications",
                 tint = MaterialTheme.colorScheme.onSurfaceVariant,
             )
