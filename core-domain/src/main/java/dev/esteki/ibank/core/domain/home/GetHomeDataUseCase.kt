@@ -1,14 +1,16 @@
 package dev.esteki.ibank.core.domain.home
 
-import dev.esteki.ibank.core.domain.common.AppError
+import dev.esteki.ibank.core.domain.account.AccountRepository
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.model.Account
-import dev.esteki.ibank.core.domain.model.QuickAction
-import dev.esteki.ibank.core.domain.model.Transaction
-import dev.esteki.ibank.core.domain.model.UserProfile
+import dev.esteki.ibank.core.domain.account.Account
+import dev.esteki.ibank.core.domain.quickaction.QuickAction
+import dev.esteki.ibank.core.domain.transaction.Transaction
+import dev.esteki.ibank.core.domain.user.UserProfile
+import dev.esteki.ibank.core.domain.quickaction.QuickActionRepository
+import dev.esteki.ibank.core.domain.transaction.TransactionRepository
+import dev.esteki.ibank.core.domain.user.UserProfileRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 data class HomeData(
@@ -19,24 +21,24 @@ data class HomeData(
 )
 
 class GetHomeDataUseCase @Inject constructor(
-    private val repository: HomeRepository,
+    private val accountRepository: AccountRepository,
+    private val transactionRepository: TransactionRepository,
+    private val userProfileRepository: UserProfileRepository,
+    private val quickActionRepository: QuickActionRepository,
 ) {
     operator fun invoke(): Flow<Result<HomeData>> = combine(
-        repository.getUserProfile(),
-        repository.getAccounts(),
-        repository.getQuickActions(),
-        repository.getTransactions(),
+        userProfileRepository.getUserProfile(),
+        accountRepository.getAccounts(),
+        quickActionRepository.getQuickActions(),
+        transactionRepository.getTransactions(),
     ) { profile, accounts, quickActions, transactions ->
-        // Check if any result is a failure
         val failures = listOf(profile, accounts, quickActions, transactions)
             .filterIsInstance<Result.Failure>()
-        
+
         if (failures.isNotEmpty()) {
-            // Return the first failure
             return@combine Result.Failure(failures.first().error)
         }
 
-        // All results are success, combine data
         val profileData = (profile as Result.Success).data
         val accountsData = (accounts as Result.Success).data
         val quickActionsData = (quickActions as Result.Success).data

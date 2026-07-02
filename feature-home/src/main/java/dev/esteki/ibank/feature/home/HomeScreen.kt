@@ -35,9 +35,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import dev.esteki.ibank.core.domain.model.Account
-import dev.esteki.ibank.core.domain.model.QuickAction
-import dev.esteki.ibank.core.domain.model.Transaction
+import dev.esteki.ibank.core.domain.account.Account
+import dev.esteki.ibank.core.domain.quickaction.QuickAction
+import dev.esteki.ibank.core.domain.transaction.Transaction
+import dev.esteki.ibank.core.domain.transaction.TransactionIcon
 import java.text.NumberFormat
 import java.util.*
 
@@ -344,31 +345,31 @@ private fun TransactionItem(
 }
 
 @Composable
-private fun getTransactionIconBackground(icon: dev.esteki.ibank.core.domain.model.TransactionIcon): androidx.compose.ui.graphics.Color {
+private fun getTransactionIconBackground(icon: dev.esteki.ibank.core.domain.transaction.TransactionIcon): androidx.compose.ui.graphics.Color {
     return when (icon) {
-        dev.esteki.ibank.core.domain.model.TransactionIcon.MUSIC -> MaterialTheme.colorScheme.tertiaryContainer
-        dev.esteki.ibank.core.domain.model.TransactionIcon.SALARY -> MaterialTheme.colorScheme.primaryContainer
-        dev.esteki.ibank.core.domain.model.TransactionIcon.GROCERY -> MaterialTheme.colorScheme.secondaryContainer
-        dev.esteki.ibank.core.domain.model.TransactionIcon.TRANSFER -> MaterialTheme.colorScheme.surfaceVariant
+        dev.esteki.ibank.core.domain.transaction.TransactionIcon.MUSIC -> MaterialTheme.colorScheme.tertiaryContainer
+        dev.esteki.ibank.core.domain.transaction.TransactionIcon.SALARY -> MaterialTheme.colorScheme.primaryContainer
+        dev.esteki.ibank.core.domain.transaction.TransactionIcon.GROCERY -> MaterialTheme.colorScheme.secondaryContainer
+        dev.esteki.ibank.core.domain.transaction.TransactionIcon.TRANSFER -> MaterialTheme.colorScheme.surfaceVariant
     }
 }
 
 @Composable
-private fun getTransactionIconTint(icon: dev.esteki.ibank.core.domain.model.TransactionIcon): androidx.compose.ui.graphics.Color {
+private fun getTransactionIconTint(icon: dev.esteki.ibank.core.domain.transaction.TransactionIcon): androidx.compose.ui.graphics.Color {
     return when (icon) {
-        dev.esteki.ibank.core.domain.model.TransactionIcon.MUSIC -> MaterialTheme.colorScheme.onTertiaryContainer
-        dev.esteki.ibank.core.domain.model.TransactionIcon.SALARY -> MaterialTheme.colorScheme.onPrimaryContainer
-        dev.esteki.ibank.core.domain.model.TransactionIcon.GROCERY -> MaterialTheme.colorScheme.onSecondaryContainer
-        dev.esteki.ibank.core.domain.model.TransactionIcon.TRANSFER -> MaterialTheme.colorScheme.onSurfaceVariant
+        dev.esteki.ibank.core.domain.transaction.TransactionIcon.MUSIC -> MaterialTheme.colorScheme.onTertiaryContainer
+        dev.esteki.ibank.core.domain.transaction.TransactionIcon.SALARY -> MaterialTheme.colorScheme.onPrimaryContainer
+        dev.esteki.ibank.core.domain.transaction.TransactionIcon.GROCERY -> MaterialTheme.colorScheme.onSecondaryContainer
+        dev.esteki.ibank.core.domain.transaction.TransactionIcon.TRANSFER -> MaterialTheme.colorScheme.onSurfaceVariant
     }
 }
 
-private fun getTransactionIcon(icon: dev.esteki.ibank.core.domain.model.TransactionIcon): Int {
+private fun getTransactionIcon(icon: dev.esteki.ibank.core.domain.transaction.TransactionIcon): Int {
     return when (icon) {
-        dev.esteki.ibank.core.domain.model.TransactionIcon.MUSIC -> dev.esteki.ibank.core.presentation.R.drawable.ic_music
-        dev.esteki.ibank.core.domain.model.TransactionIcon.SALARY -> dev.esteki.ibank.core.presentation.R.drawable.ic_salary
-        dev.esteki.ibank.core.domain.model.TransactionIcon.GROCERY -> dev.esteki.ibank.core.presentation.R.drawable.ic_grocery
-        dev.esteki.ibank.core.domain.model.TransactionIcon.TRANSFER -> dev.esteki.ibank.core.presentation.R.drawable.ic_transfer
+        dev.esteki.ibank.core.domain.transaction.TransactionIcon.MUSIC -> dev.esteki.ibank.core.presentation.R.drawable.ic_music
+        dev.esteki.ibank.core.domain.transaction.TransactionIcon.SALARY -> dev.esteki.ibank.core.presentation.R.drawable.ic_salary
+        dev.esteki.ibank.core.domain.transaction.TransactionIcon.GROCERY -> dev.esteki.ibank.core.presentation.R.drawable.ic_grocery
+        dev.esteki.ibank.core.domain.transaction.TransactionIcon.TRANSFER -> dev.esteki.ibank.core.presentation.R.drawable.ic_transfer
     }
 }
 

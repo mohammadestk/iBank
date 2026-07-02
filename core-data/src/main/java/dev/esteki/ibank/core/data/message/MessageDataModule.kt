@@ -4,8 +4,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import dev.esteki.ibank.core.data.local.MessageLocalDataSource
-import dev.esteki.ibank.core.data.local.dao.MessageDao
 import dev.esteki.ibank.core.domain.message.MessageRepository
 import javax.inject.Singleton
 

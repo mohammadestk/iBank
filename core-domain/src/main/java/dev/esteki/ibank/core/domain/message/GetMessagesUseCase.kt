@@ -1,7 +1,7 @@
 package dev.esteki.ibank.core.domain.message
 
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.model.Message
+import dev.esteki.ibank.core.domain.message.Message
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import javax.inject.Inject

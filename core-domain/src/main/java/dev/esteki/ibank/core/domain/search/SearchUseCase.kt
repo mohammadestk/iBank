@@ -1,8 +1,10 @@
 package dev.esteki.ibank.core.domain.search
 
+import dev.esteki.ibank.core.domain.account.AccountRepository
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.model.Account
-import dev.esteki.ibank.core.domain.model.Transaction
+import dev.esteki.ibank.core.domain.account.Account
+import dev.esteki.ibank.core.domain.transaction.Transaction
+import dev.esteki.ibank.core.domain.transaction.TransactionRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import javax.inject.Inject
@@ -13,11 +15,12 @@ data class SearchData(
 )
 
 class SearchUseCase @Inject constructor(
-    private val repository: SearchRepository,
+    private val accountRepository: AccountRepository,
+    private val transactionRepository: TransactionRepository,
 ) {
     operator fun invoke(query: String): Flow<Result<SearchData>> = combine(
-        repository.searchAccounts(query),
-        repository.searchTransactions(query),
+        accountRepository.searchAccounts(query),
+        transactionRepository.searchTransactions(query),
     ) { accounts, transactions ->
         val failures = listOf(accounts, transactions)
             .filterIsInstance<Result.Failure>()

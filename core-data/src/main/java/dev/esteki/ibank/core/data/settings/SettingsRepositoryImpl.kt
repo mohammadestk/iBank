@@ -1,16 +1,13 @@
 package dev.esteki.ibank.core.data.settings
 
-import dev.esteki.ibank.core.data.local.SettingsLocalDataSource
-import dev.esteki.ibank.core.data.local.SettingsSectionDto
-import dev.esteki.ibank.core.data.local.entity.SettingsEntity
-import dev.esteki.ibank.core.data.local.entity.UserProfileEntity
-import dev.esteki.ibank.core.data.local.entity.toDomain
+import dev.esteki.ibank.core.data.db.mapper.toDomain
+import dev.esteki.ibank.core.data.user.UserProfileEntity
 import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.model.Settings
-import dev.esteki.ibank.core.domain.model.SettingsItem
-import dev.esteki.ibank.core.domain.model.SettingsItemType
-import dev.esteki.ibank.core.domain.model.SettingsSection
+import dev.esteki.ibank.core.domain.settings.Settings
+import dev.esteki.ibank.core.domain.settings.SettingsItem
+import dev.esteki.ibank.core.domain.settings.SettingsItemType
+import dev.esteki.ibank.core.domain.settings.SettingsSection
 import dev.esteki.ibank.core.domain.settings.SettingsRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine

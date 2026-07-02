@@ -8,7 +8,8 @@ import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.common.toUserMessage
 import dev.esteki.ibank.core.domain.message.GetMessagesUseCase
-import dev.esteki.ibank.core.domain.model.Message
+import dev.esteki.ibank.core.domain.message.Message
+import dev.esteki.ibank.core.domain.message.MessageType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -116,12 +117,12 @@ class MessageViewModel @Inject constructor(
         return when (filter) {
             MessageFilter.INBOX -> messages
             MessageFilter.ALERTS -> messages.filter {
-                it.type == dev.esteki.ibank.core.domain.model.MessageType.SECURITY
+                it.type == MessageType.SECURITY
             }
             MessageFilter.SUPPORT -> messages.filter {
-                it.type == dev.esteki.ibank.core.domain.model.MessageType.TRANSACTION ||
-                        it.type == dev.esteki.ibank.core.domain.model.MessageType.SYSTEM ||
-                        it.type == dev.esteki.ibank.core.domain.model.MessageType.PROMOTION
+                it.type == MessageType.TRANSACTION ||
+                        it.type == MessageType.SYSTEM ||
+                        it.type == MessageType.PROMOTION
             }
         }
     }

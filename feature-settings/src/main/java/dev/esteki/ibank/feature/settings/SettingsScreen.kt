@@ -39,10 +39,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import dev.esteki.ibank.core.domain.model.SettingsItem
-import dev.esteki.ibank.core.domain.model.SettingsItemType
-import dev.esteki.ibank.core.domain.model.SettingsSection
-import dev.esteki.ibank.core.domain.model.UserProfile
+import dev.esteki.ibank.core.domain.settings.SettingsItem
+import dev.esteki.ibank.core.domain.settings.SettingsItemType
+import dev.esteki.ibank.core.domain.settings.SettingsSection
+import dev.esteki.ibank.core.domain.user.UserProfile
 import dev.esteki.ibank.core.presentation.R
 import dev.esteki.ibank.core.presentation.theme.IBankTheme
 

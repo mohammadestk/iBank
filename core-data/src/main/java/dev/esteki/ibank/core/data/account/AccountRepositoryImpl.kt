@@ -1,0 +1,23 @@
+package dev.esteki.ibank.core.data.account
+
+import dev.esteki.ibank.core.data.db.mapper.toDomain
+import dev.esteki.ibank.core.domain.account.AccountRepository
+import dev.esteki.ibank.core.domain.common.Result
+import dev.esteki.ibank.core.domain.account.Account
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+
+class AccountRepositoryImpl(
+    private val localDataSource: AccountLocalDataSource,
+) : AccountRepository {
+
+    override fun getAccounts(): Flow<Result<List<Account>>> =
+        localDataSource.observeAll().map { entities ->
+            Result.Success(entities.map { it.toDomain() })
+        }
+
+    override fun searchAccounts(query: String): Flow<Result<List<Account>>> =
+        localDataSource.search(query).map { entities ->
+            Result.Success(entities.map { it.toDomain() })
+        }
+}

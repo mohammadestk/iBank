@@ -8,9 +8,9 @@ import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.common.toUserMessage
 import dev.esteki.ibank.core.domain.home.GetHomeDataUseCase
-import dev.esteki.ibank.core.domain.model.Account
-import dev.esteki.ibank.core.domain.model.QuickAction
-import dev.esteki.ibank.core.domain.model.Transaction
+import dev.esteki.ibank.core.domain.account.Account
+import dev.esteki.ibank.core.domain.quickaction.QuickAction
+import dev.esteki.ibank.core.domain.transaction.Transaction
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
