@@ -15,7 +15,11 @@ Built with Jetpack Compose, Clean Architecture, and Material 3
 
 ---
 
-## Features
+## Screens
+
+<p align="center">
+  <img src="specs/ui/screens.png" alt="iBank Screens" width="100%">
+</p>
 
 - **Home** — Balance card, quick actions, recent transactions
 - **Search** — Filter chips, payee suggestions, real-time search
