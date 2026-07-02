@@ -46,8 +46,9 @@
 - Routes: `BottomRoute` sealed class with `@Serializable` (Navigation 3 requires kotlinx.serialization)
 - Compose tests: `createComposeRule()` from `v2` package
 - Unit tests: MockK for mocking, Turbine for testing Flow emissions
+- Unit tests: Arrange-Act-Assert pattern (whenever possible)
 - No linting config yet (no ktlint/detekt)
-- **No hilt-navigation-compose** — incompatible with Navigation3. Use `viewModel()` from `lifecycle-viewmodel-navigation3`
+- Use `hiltViewModel()` from `hilt-navigation-compose` for ViewModel initialization
 
 ## Gotchas
 - Navigation 3 uses `NavDisplay` + `entryProvider`, NOT `NavHost` from old navigation

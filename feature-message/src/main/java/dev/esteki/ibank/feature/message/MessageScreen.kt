@@ -38,6 +38,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.esteki.ibank.core.domain.message.Message
@@ -47,7 +48,7 @@ import dev.esteki.ibank.core.presentation.theme.IBankTheme
 @Composable
 fun MessageScreen(
     modifier: Modifier = Modifier,
-    viewModel: MessageViewModel = viewModel()
+    viewModel: MessageViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 

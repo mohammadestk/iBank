@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
 import dev.esteki.ibank.BottomRoute
@@ -20,6 +21,7 @@ fun AppNavDisplay(
     NavDisplay(
         modifier = modifier,
         backStack = backStack,
+        entryDecorators = listOf(rememberViewModelStoreNavEntryDecorator()),
         onBack = { backStack.removeLastOrNull() },
         entryProvider = entryProvider {
             entry<BottomRoute.Home> { key ->
