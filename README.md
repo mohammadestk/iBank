@@ -31,7 +31,7 @@ Built with Jetpack Compose, Clean Architecture, and Material 3
 ```
 ┌─────────────────────────────────────────────┐
 │                Feature Layer                │
-│  Screen ← ViewModel ← UseCase              │
+│  Screen ← ViewModel ← UseCase               │
 ├─────────────────────────────────────────────┤
 │                Domain Layer                 │
 │  Repository Interface ← Domain Models       │
