@@ -1,12 +1,10 @@
 package dev.esteki.ibank.feature.home
 
-import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.esteki.ibank.core.domain.account.model.Account
 import dev.esteki.ibank.core.domain.account.usecase.GetAccountsUseCase
-import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.common.toUserMessage
 import dev.esteki.ibank.core.domain.quickaction.model.QuickAction
@@ -23,33 +21,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
-
-@Stable
-data class HomeUiState(
-    val result: HomeResult,
-    val accounts: List<Account>,
-    val quickActions: List<QuickAction>,
-    val transactions: List<Transaction>,
-)
-
-sealed interface HomeResult {
-    data object Idle : HomeResult
-    data object Loading : HomeResult
-    data class Success(
-        val userName: String,
-        val avatarUrl: String,
-        val notificationCount: Int,
-        val totalBalance: Double,
-    ) : HomeResult
-    data class Failure(val error: AppError, val message: String) : HomeResult
-}
-
-sealed interface HomeIntent {
-    data object LoadData : HomeIntent
-    data class QuickActionClicked(val action: QuickAction) : HomeIntent
-    data object NotificationClicked : HomeIntent
-    data object SeeAllTransactions : HomeIntent
-}
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(

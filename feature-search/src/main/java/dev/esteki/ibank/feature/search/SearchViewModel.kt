@@ -1,12 +1,10 @@
 package dev.esteki.ibank.feature.search
 
-import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.esteki.ibank.core.domain.account.model.Account
 import dev.esteki.ibank.core.domain.account.usecase.SearchAccountsUseCase
-import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.common.toUserMessage
 import dev.esteki.ibank.core.domain.transaction.model.Transaction
@@ -19,33 +17,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
-
-@Stable
-data class SearchUiState(
-    val result: SearchResult,
-    val query: String,
-    val selectedFilter: SearchFilter,
-    val accounts: List<Account>,
-    val transactions: List<Transaction>,
-    val recentSearches: List<RecentSearch>,
-    val suggestedPayees: List<SuggestedPayee>,
-)
-
-sealed interface SearchResult {
-    data object Idle : SearchResult
-    data object Loading : SearchResult
-    data object Empty : SearchResult
-    data class Success(val accounts: List<Account>, val transactions: List<Transaction>) : SearchResult
-    data class Failure(val error: AppError, val message: String) : SearchResult
-}
-
-sealed interface SearchIntent {
-    data class QueryChanged(val query: String) : SearchIntent
-    data class FilterSelected(val filter: SearchFilter) : SearchIntent
-    data class RecentSearchClicked(val search: RecentSearch) : SearchIntent
-    data class PayeeClicked(val payee: SuggestedPayee) : SearchIntent
-    data object ClearSearch : SearchIntent
-}
 
 @HiltViewModel
 class SearchViewModel @Inject constructor(

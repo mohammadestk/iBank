@@ -1,15 +1,13 @@
 package dev.esteki.ibank.feature.message
 
-import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.common.toUserMessage
-import dev.esteki.ibank.core.domain.message.usecase.GetMessagesUseCase
 import dev.esteki.ibank.core.domain.message.model.Message
 import dev.esteki.ibank.core.domain.message.model.MessageType
+import dev.esteki.ibank.core.domain.message.usecase.GetMessagesUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,28 +15,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
-
-@Stable
-data class MessageUiState(
-    val result: MessageResult,
-    val messages: List<Message>,
-    val filteredMessages: List<Message>,
-    val unreadCount: Int,
-    val selectedFilter: MessageFilter,
-)
-
-sealed interface MessageResult {
-    data object Idle : MessageResult
-    data object Loading : MessageResult
-    data class Success(val messages: List<Message>, val unreadCount: Int) : MessageResult
-    data class Failure(val error: AppError, val message: String) : MessageResult
-}
-
-sealed interface MessageIntent {
-    data object LoadMessages : MessageIntent
-    data class FilterSelected(val filter: MessageFilter) : MessageIntent
-    data class MessageClicked(val message: Message) : MessageIntent
-}
 
 @HiltViewModel
 class MessageViewModel @Inject constructor(

@@ -1,16 +1,11 @@
 package dev.esteki.ibank.feature.settings
 
-import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.common.toUserMessage
-import dev.esteki.ibank.core.domain.settings.model.Settings
 import dev.esteki.ibank.core.domain.settings.model.SettingsItem
-import dev.esteki.ibank.core.domain.settings.model.SettingsSection
-import dev.esteki.ibank.core.domain.user.model.UserProfile
 import dev.esteki.ibank.core.domain.settings.usecase.GetSettingsUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -19,25 +14,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
-
-@Stable
-data class SettingsUiState(
-    val result: SettingsResult,
-    val profile: UserProfile?,
-    val sections: List<SettingsSection>,
-)
-
-sealed interface SettingsResult {
-    data object Idle : SettingsResult
-    data object Loading : SettingsResult
-    data class Success(val settings: Settings) : SettingsResult
-    data class Failure(val error: AppError, val message: String) : SettingsResult
-}
-
-sealed interface SettingsIntent {
-    data object LoadSettings : SettingsIntent
-    data class ItemClicked(val item: SettingsItem) : SettingsIntent
-}
 
 @HiltViewModel
 class SettingsViewModel @Inject constructor(
