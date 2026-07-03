@@ -4,15 +4,17 @@ import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dev.esteki.ibank.core.domain.account.model.Account
+import dev.esteki.ibank.core.domain.account.repository.AccountRepository
 import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.common.toUserMessage
-import dev.esteki.ibank.core.domain.account.model.Account
 import dev.esteki.ibank.core.domain.transaction.model.Transaction
-import dev.esteki.ibank.core.domain.account.usecase.SearchUseCase
+import dev.esteki.ibank.core.domain.transaction.repository.TransactionRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
@@ -66,7 +68,8 @@ sealed interface SearchIntent {
 @HiltViewModel
 class SearchViewModel @Inject constructor(
     private val initialUiState: SearchUiState,
-    private val searchUseCase: SearchUseCase,
+    private val accountRepository: AccountRepository,
+    private val transactionRepository: TransactionRepository,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(initialUiState)
@@ -98,7 +101,27 @@ class SearchViewModel @Inject constructor(
 
         _uiState.update { it.copy(result = SearchResult.Loading) }
 
-        searchUseCase(query)
+        combine(
+            accountRepository.searchAccounts(query),
+            transactionRepository.searchTransactions(query),
+        ) { accounts, transactions ->
+            val failures = listOf(accounts, transactions)
+                .filterIsInstance<Result.Failure>()
+
+            if (failures.isNotEmpty()) {
+                return@combine Result.Failure(failures.first().error)
+            }
+
+            val accountsData = (accounts as Result.Success).data
+            val transactionsData = (transactions as Result.Success).data
+
+            Result.Success(
+                SearchData(
+                    accounts = accountsData,
+                    transactions = transactionsData,
+                )
+            )
+        }
             .onEach { result ->
                 when (result) {
                     is Result.Success -> {
@@ -162,3 +185,8 @@ class SearchViewModel @Inject constructor(
         }
     }
 }
+
+private data class SearchData(
+    val accounts: List<Account>,
+    val transactions: List<Transaction>,
+)
