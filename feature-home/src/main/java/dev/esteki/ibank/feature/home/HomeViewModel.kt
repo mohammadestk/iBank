@@ -5,15 +5,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.esteki.ibank.core.domain.account.model.Account
+import dev.esteki.ibank.core.domain.account.usecase.GetAccountsUseCase
 import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.common.toUserMessage
 import dev.esteki.ibank.core.domain.quickaction.model.QuickAction
+import dev.esteki.ibank.core.domain.quickaction.usecase.GetQuickActionsUseCase
 import dev.esteki.ibank.core.domain.transaction.model.Transaction
-import dev.esteki.ibank.core.domain.usecase.GetAccountsUseCase
-import dev.esteki.ibank.core.domain.usecase.GetQuickActionsUseCase
-import dev.esteki.ibank.core.domain.usecase.GetTransactionsUseCase
-import dev.esteki.ibank.core.domain.usecase.GetUserProfileUseCase
+import dev.esteki.ibank.core.domain.transaction.usecase.GetTransactionsUseCase
+import dev.esteki.ibank.core.domain.user.model.UserProfile
+import dev.esteki.ibank.core.domain.user.usecase.GetUserProfileUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -38,6 +39,7 @@ sealed interface HomeResult {
         val userName: String,
         val avatarUrl: String,
         val notificationCount: Int,
+        val totalBalance: Double,
     ) : HomeResult
     data class Failure(val error: AppError, val message: String) : HomeResult
 }
@@ -94,13 +96,16 @@ class HomeViewModel @Inject constructor(
             val accountsData = (accounts as Result.Success).data
             val quickActionsData = (quickActions as Result.Success).data
             val transactionsData = (transactions as Result.Success).data
+                .sortedByDescending { it.date }
+                .take(RECENT_TRANSACTION_LIMIT)
 
             Result.Success(
                 HomeData(
                     profile = profileData,
+                    totalBalance = accountsData.sumOf { it.balance },
                     accounts = accountsData,
                     quickActions = quickActionsData,
-                    transactions = transactionsData,
+                    recentTransactions = transactionsData,
                 )
             )
         }
@@ -114,10 +119,11 @@ class HomeViewModel @Inject constructor(
                                     userName = data.profile.name,
                                     avatarUrl = data.profile.avatarUrl,
                                     notificationCount = data.profile.notificationCount,
+                                    totalBalance = data.totalBalance,
                                 ),
                                 accounts = data.accounts,
                                 quickActions = data.quickActions,
-                                transactions = data.transactions,
+                                transactions = data.recentTransactions,
                             )
                         }
                     }
@@ -147,11 +153,16 @@ class HomeViewModel @Inject constructor(
     private fun handleSeeAllTransactions() {
         // TODO: Navigate to all transactions screen
     }
+
+    companion object {
+        private const val RECENT_TRANSACTION_LIMIT = 5
+    }
 }
 
 private data class HomeData(
-    val profile: dev.esteki.ibank.core.domain.user.model.UserProfile,
+    val profile: UserProfile,
+    val totalBalance: Double,
     val accounts: List<Account>,
     val quickActions: List<QuickAction>,
-    val transactions: List<Transaction>,
+    val recentTransactions: List<Transaction>,
 )

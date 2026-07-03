@@ -1,4 +1,4 @@
-package dev.esteki.ibank.core.domain.usecase
+package dev.esteki.ibank.core.domain.user.usecase
 
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.user.model.UserProfile

@@ -5,12 +5,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.esteki.ibank.core.domain.account.model.Account
+import dev.esteki.ibank.core.domain.account.usecase.SearchAccountsUseCase
 import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.common.toUserMessage
 import dev.esteki.ibank.core.domain.transaction.model.Transaction
-import dev.esteki.ibank.core.domain.usecase.SearchAccountsUseCase
-import dev.esteki.ibank.core.domain.usecase.SearchTransactionsUseCase
+import dev.esteki.ibank.core.domain.transaction.usecase.SearchTransactionsUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

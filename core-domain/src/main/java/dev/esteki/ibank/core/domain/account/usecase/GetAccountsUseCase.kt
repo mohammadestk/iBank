@@ -1,4 +1,4 @@
-package dev.esteki.ibank.core.domain.usecase
+package dev.esteki.ibank.core.domain.account.usecase
 
 import dev.esteki.ibank.core.domain.account.model.Account
 import dev.esteki.ibank.core.domain.account.repository.AccountRepository

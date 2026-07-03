@@ -1,4 +1,4 @@
-package dev.esteki.ibank.core.domain.usecase
+package dev.esteki.ibank.core.domain.transaction.usecase
 
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.transaction.model.Transaction
