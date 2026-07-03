@@ -1,24 +1,13 @@
-package dev.esteki.ibank.core.domain.home
+package dev.esteki.ibank.core.domain.account.usecase
 
-import dev.esteki.ibank.core.domain.account.AccountRepository
+import dev.esteki.ibank.core.domain.account.repository.AccountRepository
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.account.Account
-import dev.esteki.ibank.core.domain.quickaction.QuickAction
-import dev.esteki.ibank.core.domain.transaction.Transaction
-import dev.esteki.ibank.core.domain.user.UserProfile
-import dev.esteki.ibank.core.domain.quickaction.QuickActionRepository
-import dev.esteki.ibank.core.domain.transaction.TransactionRepository
-import dev.esteki.ibank.core.domain.user.UserProfileRepository
+import dev.esteki.ibank.core.domain.quickaction.repository.QuickActionRepository
+import dev.esteki.ibank.core.domain.transaction.repository.TransactionRepository
+import dev.esteki.ibank.core.domain.user.repository.UserProfileRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import javax.inject.Inject
-
-data class HomeData(
-    val profile: UserProfile,
-    val accounts: List<Account>,
-    val quickActions: List<QuickAction>,
-    val transactions: List<Transaction>,
-)
 
 class GetHomeDataUseCase @Inject constructor(
     private val accountRepository: AccountRepository,

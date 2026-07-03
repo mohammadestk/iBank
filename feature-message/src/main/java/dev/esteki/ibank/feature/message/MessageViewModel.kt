@@ -7,9 +7,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.common.toUserMessage
-import dev.esteki.ibank.core.domain.message.GetMessagesUseCase
-import dev.esteki.ibank.core.domain.message.Message
-import dev.esteki.ibank.core.domain.message.MessageType
+import dev.esteki.ibank.core.domain.message.usecase.GetMessagesUseCase
+import dev.esteki.ibank.core.domain.message.model.Message
+import dev.esteki.ibank.core.domain.message.model.MessageType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

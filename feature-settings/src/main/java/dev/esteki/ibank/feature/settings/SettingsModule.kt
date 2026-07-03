@@ -5,7 +5,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
-import dev.esteki.ibank.core.domain.settings.SettingsSection
 
 @Module
 @InstallIn(ViewModelComponent::class)

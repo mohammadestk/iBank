@@ -2,8 +2,8 @@ package dev.esteki.ibank.core.data.transaction
 
 import dev.esteki.ibank.core.data.db.mapper.toDomain
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.transaction.Transaction
-import dev.esteki.ibank.core.domain.transaction.TransactionRepository
+import dev.esteki.ibank.core.domain.transaction.model.Transaction
+import dev.esteki.ibank.core.domain.transaction.repository.TransactionRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

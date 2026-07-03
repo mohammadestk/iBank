@@ -5,7 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import dev.esteki.ibank.core.data.user.UserProfileDao
-import dev.esteki.ibank.core.domain.settings.SettingsRepository
+import dev.esteki.ibank.core.domain.settings.repository.SettingsRepository
 import javax.inject.Singleton
 
 @Module

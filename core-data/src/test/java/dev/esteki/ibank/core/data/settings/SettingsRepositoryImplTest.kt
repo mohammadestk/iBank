@@ -5,7 +5,7 @@ import com.google.common.truth.Truth.assertThat
 import dev.esteki.ibank.core.data.user.UserProfileEntity
 import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.settings.SettingsItemType
+import dev.esteki.ibank.core.domain.settings.model.SettingsItemType
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.flowOf

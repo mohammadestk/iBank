@@ -1,7 +1,7 @@
-package dev.esteki.ibank.core.domain.account
+package dev.esteki.ibank.core.domain.account.repository
 
+import dev.esteki.ibank.core.domain.account.model.Account
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.account.Account
 import kotlinx.coroutines.flow.Flow
 
 interface AccountRepository {

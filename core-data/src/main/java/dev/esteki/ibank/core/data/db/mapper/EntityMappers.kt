@@ -5,15 +5,15 @@ import dev.esteki.ibank.core.data.message.MessageEntity
 import dev.esteki.ibank.core.data.quickaction.QuickActionEntity
 import dev.esteki.ibank.core.data.transaction.TransactionEntity
 import dev.esteki.ibank.core.data.user.UserProfileEntity
-import dev.esteki.ibank.core.domain.account.Account
-import dev.esteki.ibank.core.domain.account.AccountType
-import dev.esteki.ibank.core.domain.message.Message
-import dev.esteki.ibank.core.domain.message.MessageType
-import dev.esteki.ibank.core.domain.quickaction.QuickAction
-import dev.esteki.ibank.core.domain.quickaction.QuickActionType
-import dev.esteki.ibank.core.domain.transaction.Transaction
-import dev.esteki.ibank.core.domain.transaction.TransactionIcon
-import dev.esteki.ibank.core.domain.user.UserProfile
+import dev.esteki.ibank.core.domain.account.model.Account
+import dev.esteki.ibank.core.domain.account.model.AccountType
+import dev.esteki.ibank.core.domain.message.model.Message
+import dev.esteki.ibank.core.domain.message.model.MessageType
+import dev.esteki.ibank.core.domain.quickaction.model.QuickAction
+import dev.esteki.ibank.core.domain.quickaction.model.QuickActionType
+import dev.esteki.ibank.core.domain.transaction.model.Transaction
+import dev.esteki.ibank.core.domain.transaction.model.TransactionIcon
+import dev.esteki.ibank.core.domain.user.model.UserProfile
 
 fun UserProfileEntity.toDomain() = UserProfile(
     id = id,

@@ -2,8 +2,8 @@ package dev.esteki.ibank.core.data.message
 
 import dev.esteki.ibank.core.data.db.mapper.toDomain
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.message.MessageRepository
-import dev.esteki.ibank.core.domain.message.Message
+import dev.esteki.ibank.core.domain.message.model.Message
+import dev.esteki.ibank.core.domain.message.repository.MessageRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

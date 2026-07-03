@@ -2,8 +2,8 @@ package dev.esteki.ibank.core.data.quickaction
 
 import dev.esteki.ibank.core.data.db.mapper.toDomain
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.quickaction.QuickAction
-import dev.esteki.ibank.core.domain.quickaction.QuickActionRepository
+import dev.esteki.ibank.core.domain.quickaction.model.QuickAction
+import dev.esteki.ibank.core.domain.quickaction.repository.QuickActionRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

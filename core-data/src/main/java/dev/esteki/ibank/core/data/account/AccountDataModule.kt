@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import dev.esteki.ibank.core.domain.account.AccountRepository
+import dev.esteki.ibank.core.domain.account.repository.AccountRepository
 import javax.inject.Singleton
 
 @Module

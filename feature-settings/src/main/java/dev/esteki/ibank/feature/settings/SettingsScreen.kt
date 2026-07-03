@@ -40,10 +40,10 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import dev.esteki.ibank.core.domain.settings.SettingsItem
-import dev.esteki.ibank.core.domain.settings.SettingsItemType
-import dev.esteki.ibank.core.domain.settings.SettingsSection
-import dev.esteki.ibank.core.domain.user.UserProfile
+import dev.esteki.ibank.core.domain.settings.model.SettingsItem
+import dev.esteki.ibank.core.domain.settings.model.SettingsItemType
+import dev.esteki.ibank.core.domain.settings.model.SettingsSection
+import dev.esteki.ibank.core.domain.user.model.UserProfile
 import dev.esteki.ibank.core.presentation.R
 import dev.esteki.ibank.core.presentation.theme.IBankTheme
 

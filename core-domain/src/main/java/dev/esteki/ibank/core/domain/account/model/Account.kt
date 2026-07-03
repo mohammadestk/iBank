@@ -1,4 +1,4 @@
-package dev.esteki.ibank.core.domain.account
+package dev.esteki.ibank.core.domain.account.model
 
 data class Account(
     val id: String,
@@ -8,9 +8,3 @@ data class Account(
     val accountNumber: String,
     val accountType: AccountType,
 )
-
-enum class AccountType {
-    SAVINGS,
-    CHECKING,
-    CREDIT,
-}

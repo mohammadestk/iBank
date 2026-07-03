@@ -3,7 +3,7 @@ package dev.esteki.ibank.core.data.quickaction
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.quickaction.QuickActionType
+import dev.esteki.ibank.core.domain.quickaction.model.QuickActionType
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.flowOf

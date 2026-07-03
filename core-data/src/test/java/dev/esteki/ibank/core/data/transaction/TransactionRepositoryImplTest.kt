@@ -3,7 +3,7 @@ package dev.esteki.ibank.core.data.transaction
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.transaction.TransactionIcon
+import dev.esteki.ibank.core.domain.transaction.model.TransactionIcon
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.flowOf

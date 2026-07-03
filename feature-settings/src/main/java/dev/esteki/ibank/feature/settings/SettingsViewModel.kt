@@ -7,11 +7,11 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.common.toUserMessage
-import dev.esteki.ibank.core.domain.settings.Settings
-import dev.esteki.ibank.core.domain.settings.SettingsItem
-import dev.esteki.ibank.core.domain.settings.SettingsSection
-import dev.esteki.ibank.core.domain.user.UserProfile
-import dev.esteki.ibank.core.domain.settings.GetSettingsUseCase
+import dev.esteki.ibank.core.domain.settings.model.Settings
+import dev.esteki.ibank.core.domain.settings.model.SettingsItem
+import dev.esteki.ibank.core.domain.settings.model.SettingsSection
+import dev.esteki.ibank.core.domain.user.model.UserProfile
+import dev.esteki.ibank.core.domain.settings.usecase.GetSettingsUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

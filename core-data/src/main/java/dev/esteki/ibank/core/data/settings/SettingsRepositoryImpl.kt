@@ -4,11 +4,11 @@ import dev.esteki.ibank.core.data.db.mapper.toDomain
 import dev.esteki.ibank.core.data.user.UserProfileEntity
 import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.settings.Settings
-import dev.esteki.ibank.core.domain.settings.SettingsItem
-import dev.esteki.ibank.core.domain.settings.SettingsItemType
-import dev.esteki.ibank.core.domain.settings.SettingsSection
-import dev.esteki.ibank.core.domain.settings.SettingsRepository
+import dev.esteki.ibank.core.domain.settings.model.Settings
+import dev.esteki.ibank.core.domain.settings.model.SettingsItem
+import dev.esteki.ibank.core.domain.settings.model.SettingsItemType
+import dev.esteki.ibank.core.domain.settings.model.SettingsSection
+import dev.esteki.ibank.core.domain.settings.repository.SettingsRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.serialization.json.Json

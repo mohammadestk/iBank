@@ -1,7 +1,7 @@
-package dev.esteki.ibank.core.domain.transaction
+package dev.esteki.ibank.core.domain.transaction.repository
 
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.transaction.Transaction
+import dev.esteki.ibank.core.domain.transaction.model.Transaction
 import kotlinx.coroutines.flow.Flow
 
 interface TransactionRepository {

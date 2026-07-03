@@ -1,7 +1,7 @@
-package dev.esteki.ibank.core.domain.message
+package dev.esteki.ibank.core.domain.message.repository
 
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.message.Message
+import dev.esteki.ibank.core.domain.message.model.Message
 import kotlinx.coroutines.flow.Flow
 
 interface MessageRepository {

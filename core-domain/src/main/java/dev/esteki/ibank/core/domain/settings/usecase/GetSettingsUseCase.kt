@@ -1,7 +1,8 @@
-package dev.esteki.ibank.core.domain.settings
+package dev.esteki.ibank.core.domain.settings.usecase
 
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.settings.Settings
+import dev.esteki.ibank.core.domain.settings.model.Settings
+import dev.esteki.ibank.core.domain.settings.repository.SettingsRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

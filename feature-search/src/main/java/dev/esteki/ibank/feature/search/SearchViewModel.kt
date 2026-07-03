@@ -7,9 +7,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
 import dev.esteki.ibank.core.domain.common.toUserMessage
-import dev.esteki.ibank.core.domain.account.Account
-import dev.esteki.ibank.core.domain.transaction.Transaction
-import dev.esteki.ibank.core.domain.search.SearchUseCase
+import dev.esteki.ibank.core.domain.account.model.Account
+import dev.esteki.ibank.core.domain.transaction.model.Transaction
+import dev.esteki.ibank.core.domain.account.usecase.SearchUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,4 +1,4 @@
-package dev.esteki.ibank.core.domain.transaction
+package dev.esteki.ibank.core.domain.transaction.model
 
 data class Transaction(
     val id: String,
@@ -9,10 +9,3 @@ data class Transaction(
     val icon: TransactionIcon,
     val date: String,
 )
-
-enum class TransactionIcon {
-    MUSIC,
-    SALARY,
-    GROCERY,
-    TRANSFER,
-}

@@ -1,4 +1,4 @@
-package dev.esteki.ibank.core.domain.message
+package dev.esteki.ibank.core.domain.message.model
 
 data class Message(
     val id: String,
@@ -8,10 +8,3 @@ data class Message(
     val type: MessageType,
     val isRead: Boolean,
 )
-
-enum class MessageType {
-    TRANSACTION,
-    SECURITY,
-    PROMOTION,
-    SYSTEM,
-}

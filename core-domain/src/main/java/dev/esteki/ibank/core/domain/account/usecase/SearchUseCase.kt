@@ -1,18 +1,11 @@
-package dev.esteki.ibank.core.domain.search
+package dev.esteki.ibank.core.domain.account.usecase
 
-import dev.esteki.ibank.core.domain.account.AccountRepository
+import dev.esteki.ibank.core.domain.account.repository.AccountRepository
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.account.Account
-import dev.esteki.ibank.core.domain.transaction.Transaction
-import dev.esteki.ibank.core.domain.transaction.TransactionRepository
+import dev.esteki.ibank.core.domain.transaction.repository.TransactionRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import javax.inject.Inject
-
-data class SearchData(
-    val accounts: List<Account>,
-    val transactions: List<Transaction>,
-)
 
 class SearchUseCase @Inject constructor(
     private val accountRepository: AccountRepository,

@@ -41,8 +41,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import dev.esteki.ibank.core.domain.message.Message
-import dev.esteki.ibank.core.domain.message.MessageType
+import dev.esteki.ibank.core.domain.message.model.Message
+import dev.esteki.ibank.core.domain.message.model.MessageType
 import dev.esteki.ibank.core.presentation.theme.IBankTheme
 
 @Composable

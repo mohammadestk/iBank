@@ -1,15 +1,10 @@
-package dev.esteki.ibank.core.domain.message
+package dev.esteki.ibank.core.domain.message.usecase
 
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.message.Message
+import dev.esteki.ibank.core.domain.message.repository.MessageRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import javax.inject.Inject
-
-data class MessageData(
-    val messages: List<Message>,
-    val unreadCount: Int,
-)
 
 class GetMessagesUseCase @Inject constructor(
     private val repository: MessageRepository,

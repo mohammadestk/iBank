@@ -1,9 +1,9 @@
 package dev.esteki.ibank.core.data.account
 
 import dev.esteki.ibank.core.data.db.mapper.toDomain
-import dev.esteki.ibank.core.domain.account.AccountRepository
+import dev.esteki.ibank.core.domain.account.model.Account
+import dev.esteki.ibank.core.domain.account.repository.AccountRepository
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.account.Account
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

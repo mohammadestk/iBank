@@ -45,10 +45,10 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import dev.esteki.ibank.core.domain.account.Account
-import dev.esteki.ibank.core.domain.account.AccountType
-import dev.esteki.ibank.core.domain.transaction.Transaction
-import dev.esteki.ibank.core.domain.transaction.TransactionIcon
+import dev.esteki.ibank.core.domain.account.model.Account
+import dev.esteki.ibank.core.domain.account.model.AccountType
+import dev.esteki.ibank.core.domain.transaction.model.Transaction
+import dev.esteki.ibank.core.domain.transaction.model.TransactionIcon
 import dev.esteki.ibank.core.presentation.R
 import dev.esteki.ibank.core.presentation.theme.IBankTheme
 import java.text.NumberFormat

@@ -3,8 +3,8 @@ package dev.esteki.ibank.core.data.user
 import dev.esteki.ibank.core.data.db.mapper.toDomain
 import dev.esteki.ibank.core.domain.common.AppError
 import dev.esteki.ibank.core.domain.common.Result
-import dev.esteki.ibank.core.domain.user.UserProfile
-import dev.esteki.ibank.core.domain.user.UserProfileRepository
+import dev.esteki.ibank.core.domain.user.model.UserProfile
+import dev.esteki.ibank.core.domain.user.repository.UserProfileRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

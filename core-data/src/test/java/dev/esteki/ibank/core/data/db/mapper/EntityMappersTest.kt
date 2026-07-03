@@ -6,10 +6,10 @@ import dev.esteki.ibank.core.data.message.MessageEntity
 import dev.esteki.ibank.core.data.quickaction.QuickActionEntity
 import dev.esteki.ibank.core.data.transaction.TransactionEntity
 import dev.esteki.ibank.core.data.user.UserProfileEntity
-import dev.esteki.ibank.core.domain.account.AccountType
-import dev.esteki.ibank.core.domain.message.MessageType
-import dev.esteki.ibank.core.domain.quickaction.QuickActionType
-import dev.esteki.ibank.core.domain.transaction.TransactionIcon
+import dev.esteki.ibank.core.domain.account.model.AccountType
+import dev.esteki.ibank.core.domain.message.model.MessageType
+import dev.esteki.ibank.core.domain.quickaction.model.QuickActionType
+import dev.esteki.ibank.core.domain.transaction.model.TransactionIcon
 import org.junit.Test
 
 class EntityMappersTest {
@@ -34,7 +34,7 @@ class EntityMappersTest {
     @Test
     fun `UserProfile toEntity maps all fields`() {
         // Arrange
-        val domain = dev.esteki.ibank.core.domain.user.UserProfile("1", "John", "url", 5)
+        val domain = dev.esteki.ibank.core.domain.user.model.UserProfile("1", "John", "url", 5)
 
         // Act
         val entity = domain.toEntity()
@@ -68,7 +68,7 @@ class EntityMappersTest {
     @Test
     fun `Account toEntity maps all fields and converts enum`() {
         // Arrange
-        val domain = dev.esteki.ibank.core.domain.account.Account("1", "Main", 1000.0, "USD", "****1234", AccountType.CHECKING)
+        val domain = dev.esteki.ibank.core.domain.account.model.Account("1", "Main", 1000.0, "USD", "****1234", AccountType.CHECKING)
 
         // Act
         val entity = domain.toEntity()
@@ -100,7 +100,7 @@ class EntityMappersTest {
     @Test
     fun `Transaction toEntity maps all fields and converts enum`() {
         // Arrange
-        val domain = dev.esteki.ibank.core.domain.transaction.Transaction("1", "Salary", "Deposit", 4200.0, true, TransactionIcon.SALARY, "Yesterday")
+        val domain = dev.esteki.ibank.core.domain.transaction.model.Transaction("1", "Salary", "Deposit", 4200.0, true, TransactionIcon.SALARY, "Yesterday")
 
         // Act
         val entity = domain.toEntity()
@@ -130,7 +130,7 @@ class EntityMappersTest {
     @Test
     fun `QuickAction toEntity maps all fields and converts enum`() {
         // Arrange
-        val domain = dev.esteki.ibank.core.domain.quickaction.QuickAction("1", "Send", 123, QuickActionType.RECEIVE)
+        val domain = dev.esteki.ibank.core.domain.quickaction.model.QuickAction("1", "Send", 123, QuickActionType.RECEIVE)
 
         // Act
         val entity = domain.toEntity()
@@ -161,7 +161,7 @@ class EntityMappersTest {
     @Test
     fun `Message toEntity maps all fields and converts enum`() {
         // Arrange
-        val domain = dev.esteki.ibank.core.domain.message.Message("1", "Title", "Desc", "2 min ago", MessageType.PROMOTION, true)
+        val domain = dev.esteki.ibank.core.domain.message.model.Message("1", "Title", "Desc", "2 min ago", MessageType.PROMOTION, true)
 
         // Act
         val entity = domain.toEntity()

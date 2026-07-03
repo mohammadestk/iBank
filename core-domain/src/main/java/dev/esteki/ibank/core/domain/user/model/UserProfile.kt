@@ -1,4 +1,4 @@
-package dev.esteki.ibank.core.domain.user
+package dev.esteki.ibank.core.domain.user.model
 
 data class UserProfile(
     val id: String,

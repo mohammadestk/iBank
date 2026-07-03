@@ -2,7 +2,7 @@ package dev.esteki.ibank.core.data.account
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import dev.esteki.ibank.core.domain.account.AccountType
+import dev.esteki.ibank.core.domain.account.model.AccountType
 import dev.esteki.ibank.core.domain.common.Result
 import io.mockk.every
 import io.mockk.mockk
