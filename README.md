@@ -92,7 +92,9 @@ iBank/
 ./gradlew testDebugUnitTest
 
 # Instrumented Test
-./gradlew connectedDebugAndroidTest
+./gradlew connectedDebugAndroidTest 
+    -x :core-domain:connectedDebugAndroidTest 
+    -x :core-data:connectedDebugAndroidTest
 ```
 
 ## License
