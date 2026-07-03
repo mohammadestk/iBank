@@ -1,13 +1,13 @@
 package dev.esteki.ibank.core.data.db.seed
 
-import dev.esteki.ibank.core.data.account.AccountEntity
-import dev.esteki.ibank.core.data.message.MessageEntity
-import dev.esteki.ibank.core.data.quickaction.QuickActionEntity
-import dev.esteki.ibank.core.data.settings.SettingsEntity
-import dev.esteki.ibank.core.data.settings.SettingsItemDto
-import dev.esteki.ibank.core.data.settings.SettingsSectionDto
-import dev.esteki.ibank.core.data.transaction.TransactionEntity
-import dev.esteki.ibank.core.data.user.UserProfileEntity
+import dev.esteki.ibank.core.data.account.entity.AccountEntity
+import dev.esteki.ibank.core.data.message.entity.MessageEntity
+import dev.esteki.ibank.core.data.quickaction.entity.QuickActionEntity
+import dev.esteki.ibank.core.data.settings.entity.SettingsEntity
+import dev.esteki.ibank.core.data.settings.entity.SettingsItemDto
+import dev.esteki.ibank.core.data.settings.entity.SettingsSectionDto
+import dev.esteki.ibank.core.data.transaction.entity.TransactionEntity
+import dev.esteki.ibank.core.data.user.entity.UserProfileEntity
 import dev.esteki.ibank.core.presentation.R
 import kotlinx.serialization.json.Json
 import java.util.UUID

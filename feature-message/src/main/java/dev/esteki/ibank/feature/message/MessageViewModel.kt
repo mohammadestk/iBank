@@ -18,12 +18,6 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
-enum class MessageFilter(val label: String) {
-    INBOX("Inbox"),
-    ALERTS("Alerts"),
-    SUPPORT("Support"),
-}
-
 @Stable
 data class MessageUiState(
     val result: MessageResult,

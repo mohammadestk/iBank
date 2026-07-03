@@ -20,24 +20,6 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
-enum class SearchFilter(val label: String) {
-    ALL("All"),
-    PAYEES("Payees"),
-    TRANSACTIONS("Transactions"),
-    HELP("Help"),
-}
-
-data class RecentSearch(
-    val id: String,
-    val query: String,
-)
-
-data class SuggestedPayee(
-    val id: String,
-    val name: String,
-    val initials: String,
-)
-
 @Stable
 data class SearchUiState(
     val result: SearchResult,

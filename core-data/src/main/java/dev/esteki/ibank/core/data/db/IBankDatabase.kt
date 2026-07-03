@@ -2,18 +2,18 @@ package dev.esteki.ibank.core.data.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import dev.esteki.ibank.core.data.account.AccountDao
-import dev.esteki.ibank.core.data.account.AccountEntity
-import dev.esteki.ibank.core.data.message.MessageDao
-import dev.esteki.ibank.core.data.message.MessageEntity
-import dev.esteki.ibank.core.data.quickaction.QuickActionDao
-import dev.esteki.ibank.core.data.quickaction.QuickActionEntity
-import dev.esteki.ibank.core.data.settings.SettingsDao
-import dev.esteki.ibank.core.data.settings.SettingsEntity
-import dev.esteki.ibank.core.data.transaction.TransactionDao
-import dev.esteki.ibank.core.data.transaction.TransactionEntity
-import dev.esteki.ibank.core.data.user.UserProfileDao
-import dev.esteki.ibank.core.data.user.UserProfileEntity
+import dev.esteki.ibank.core.data.account.dao.AccountDao
+import dev.esteki.ibank.core.data.account.entity.AccountEntity
+import dev.esteki.ibank.core.data.message.dao.MessageDao
+import dev.esteki.ibank.core.data.message.entity.MessageEntity
+import dev.esteki.ibank.core.data.quickaction.dao.QuickActionDao
+import dev.esteki.ibank.core.data.quickaction.entity.QuickActionEntity
+import dev.esteki.ibank.core.data.settings.dao.SettingsDao
+import dev.esteki.ibank.core.data.settings.entity.SettingsEntity
+import dev.esteki.ibank.core.data.transaction.dao.TransactionDao
+import dev.esteki.ibank.core.data.transaction.entity.TransactionEntity
+import dev.esteki.ibank.core.data.user.dao.UserProfileDao
+import dev.esteki.ibank.core.data.user.entity.UserProfileEntity
 
 @Database(
     entities = [

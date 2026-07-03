@@ -1,10 +1,10 @@
 package dev.esteki.ibank.core.data.db.mapper
 
-import dev.esteki.ibank.core.data.account.AccountEntity
-import dev.esteki.ibank.core.data.message.MessageEntity
-import dev.esteki.ibank.core.data.quickaction.QuickActionEntity
-import dev.esteki.ibank.core.data.transaction.TransactionEntity
-import dev.esteki.ibank.core.data.user.UserProfileEntity
+import dev.esteki.ibank.core.data.account.entity.AccountEntity
+import dev.esteki.ibank.core.data.message.entity.MessageEntity
+import dev.esteki.ibank.core.data.quickaction.entity.QuickActionEntity
+import dev.esteki.ibank.core.data.transaction.entity.TransactionEntity
+import dev.esteki.ibank.core.data.user.entity.UserProfileEntity
 import dev.esteki.ibank.core.domain.account.model.Account
 import dev.esteki.ibank.core.domain.account.model.AccountType
 import dev.esteki.ibank.core.domain.message.model.Message

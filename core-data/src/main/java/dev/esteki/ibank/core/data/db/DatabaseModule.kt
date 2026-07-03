@@ -7,13 +7,13 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import dev.esteki.ibank.core.data.account.AccountDao
+import dev.esteki.ibank.core.data.account.dao.AccountDao
 import dev.esteki.ibank.core.data.db.seed.SeedDatabaseCallback
-import dev.esteki.ibank.core.data.message.MessageDao
-import dev.esteki.ibank.core.data.quickaction.QuickActionDao
-import dev.esteki.ibank.core.data.settings.SettingsDao
-import dev.esteki.ibank.core.data.transaction.TransactionDao
-import dev.esteki.ibank.core.data.user.UserProfileDao
+import dev.esteki.ibank.core.data.message.dao.MessageDao
+import dev.esteki.ibank.core.data.quickaction.dao.QuickActionDao
+import dev.esteki.ibank.core.data.settings.dao.SettingsDao
+import dev.esteki.ibank.core.data.transaction.dao.TransactionDao
+import dev.esteki.ibank.core.data.user.dao.UserProfileDao
 import javax.inject.Singleton
 
 @Module
