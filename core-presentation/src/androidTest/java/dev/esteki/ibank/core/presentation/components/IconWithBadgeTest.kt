@@ -9,6 +9,7 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import dev.esteki.ibank.core.presentation.R
+import dev.esteki.ibank.core.presentation.theme.IBankTheme
 import org.junit.Rule
 import org.junit.Test
 
@@ -20,11 +21,13 @@ class IconWithBadgeTest {
     @Test
     fun badgeCount_displaysCorrectNumber() {
         composeTestRule.setContent {
-            IconWithBadge(
-                icon = R.drawable.ic_ring,
-                badgeCount = 7,
-                contentDescription = "Notifications"
-            )
+            IBankTheme {
+                IconWithBadge(
+                    icon = R.drawable.ic_ring,
+                    badgeCount = 7,
+                    contentDescription = "Notifications"
+                )
+            }
         }
 
         composeTestRule.onNodeWithText("7").assertIsDisplayed()

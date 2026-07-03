@@ -17,7 +17,9 @@
 ## Build Commands
 - `./gradlew assembleDebug` — build debug
 - `./gradlew testDebugUnitTest` — run unit tests
-- `./gradlew connectedDebugAndroidTest` — run instrumented tests
+- `./gradlew connectedDebugAndroidTest \
+    -x :core-domain:connectedDebugAndroidTest \
+    -x :core-data:connectedDebugAndroidTest` — run instrumented tests
 
 ## Architecture
 

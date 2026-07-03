@@ -49,6 +49,7 @@ import dev.esteki.ibank.feature.message.model.MessageIntent
 import dev.esteki.ibank.feature.message.model.MessageResult
 import dev.esteki.ibank.feature.message.model.MessageUiState
 import dev.esteki.ibank.feature.message.viewmodel.MessageViewModel
+import androidx.annotation.VisibleForTesting
 
 @Composable
 fun MessageScreen(
@@ -133,7 +134,8 @@ private fun MessageTopBar(
 }
 
 @Composable
-private fun SegmentedFilterRow(
+@VisibleForTesting
+internal fun SegmentedFilterRow(
     selectedFilter: MessageFilter,
     onFilterSelected: (MessageFilter) -> Unit,
 ) {
@@ -167,7 +169,8 @@ private fun SegmentedFilterRow(
 }
 
 @Composable
-private fun MessageList(
+@VisibleForTesting
+internal fun MessageList(
     messages: List<Message>,
     onMessageClick: (Message) -> Unit,
 ) {

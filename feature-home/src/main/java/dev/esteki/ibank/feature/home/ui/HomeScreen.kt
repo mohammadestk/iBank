@@ -33,6 +33,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.annotation.VisibleForTesting
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dev.esteki.ibank.core.domain.account.model.Account
@@ -89,7 +90,8 @@ fun HomeScreen(
 }
 
 @Composable
-private fun HomeContent(
+@VisibleForTesting
+internal fun HomeContent(
     modifier: Modifier = Modifier,
     uiState: HomeUiState,
     result: HomeResult.Success,

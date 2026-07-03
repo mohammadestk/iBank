@@ -58,6 +58,7 @@ import dev.esteki.ibank.feature.search.model.SearchFilter
 import dev.esteki.ibank.feature.search.model.RecentSearch
 import dev.esteki.ibank.feature.search.model.SuggestedPayee
 import dev.esteki.ibank.feature.search.viewmodel.SearchViewModel
+import androidx.annotation.VisibleForTesting
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -149,7 +150,8 @@ fun SearchScreen(
 }
 
 @Composable
-private fun SearchTopBar() {
+@VisibleForTesting
+internal fun SearchTopBar() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -164,7 +166,8 @@ private fun SearchTopBar() {
 }
 
 @Composable
-private fun SearchBar(
+@VisibleForTesting
+internal fun SearchBar(
     query: String,
     onQueryChange: (String) -> Unit,
     onClearClick: () -> Unit,
@@ -210,7 +213,8 @@ private fun SearchBar(
 }
 
 @Composable
-private fun FilterChipRow(
+@VisibleForTesting
+internal fun FilterChipRow(
     selectedFilter: SearchFilter,
     onFilterSelected: (SearchFilter) -> Unit,
 ) {
@@ -370,7 +374,8 @@ private fun SuggestedPayeeItem(
 }
 
 @Composable
-private fun SearchResults(
+@VisibleForTesting
+internal fun SearchResults(
     accounts: List<Account>,
     transactions: List<Transaction>,
 ) {

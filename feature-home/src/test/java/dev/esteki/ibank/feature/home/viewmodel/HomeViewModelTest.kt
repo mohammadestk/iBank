@@ -15,6 +15,7 @@ import dev.esteki.ibank.core.domain.transaction.model.TransactionIcon
 import dev.esteki.ibank.core.domain.transaction.usecase.GetTransactionsUseCase
 import dev.esteki.ibank.core.domain.user.model.UserProfile
 import dev.esteki.ibank.core.domain.user.usecase.GetUserProfileUseCase
+import dev.esteki.ibank.core.presentation.R
 import dev.esteki.ibank.feature.home.model.HomeResult
 import dev.esteki.ibank.feature.home.model.HomeUiState
 import io.mockk.every
@@ -46,7 +47,7 @@ class HomeViewModelTest {
         Account("2", "Checking", 500.0, "EUR", "****5678", AccountType.CHECKING),
     )
     private val quickActions = listOf(
-        QuickAction("1", "Send", 123, QuickActionType.SEND),
+        QuickAction("1", "Send", R.drawable.ic_ring, QuickActionType.SEND),
     )
     private val transactions = listOf(
         Transaction("1", "Spotify", "Sub", -10.99, false, TransactionIcon.MUSIC, "Today"),

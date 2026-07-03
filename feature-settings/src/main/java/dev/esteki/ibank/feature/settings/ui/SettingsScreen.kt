@@ -50,6 +50,7 @@ import dev.esteki.ibank.feature.settings.model.SettingsIntent
 import dev.esteki.ibank.feature.settings.model.SettingsResult
 import dev.esteki.ibank.feature.settings.model.SettingsUiState
 import dev.esteki.ibank.feature.settings.viewmodel.SettingsViewModel
+import androidx.annotation.VisibleForTesting
 
 @Composable
 fun SettingsScreen(
@@ -92,7 +93,8 @@ fun SettingsScreen(
 }
 
 @Composable
-private fun SettingsContent(
+@VisibleForTesting
+internal fun SettingsContent(
     modifier: Modifier = Modifier,
     profile: UserProfile?,
     sections: List<SettingsSection>,
