@@ -8,10 +8,10 @@ import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDe
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
 import dev.esteki.ibank.BottomRoute
-import dev.esteki.ibank.feature.home.HomeScreen
-import dev.esteki.ibank.feature.message.MessageScreen
-import dev.esteki.ibank.feature.search.SearchScreen
-import dev.esteki.ibank.feature.settings.SettingsScreen
+import dev.esteki.ibank.feature.home.ui.HomeScreen
+import dev.esteki.ibank.feature.message.ui.MessageScreen
+import dev.esteki.ibank.feature.search.ui.SearchScreen
+import dev.esteki.ibank.feature.settings.ui.SettingsScreen
 
 @Composable
 fun AppNavDisplay(
