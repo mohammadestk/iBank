@@ -49,6 +49,9 @@
 - Unit tests: Arrange-Act-Assert pattern (whenever possible)
 - No linting config yet (no ktlint/detekt)
 - Use `hiltViewModel()` from `hilt-navigation-compose` for ViewModel initialization
+- **SOLID principles are mandatory** — every class, interface, enum, and object must follow SRP, OCP, LSP, ISP, and DIP
+- **One type per file** — every class, enum, interface, and object must be in its own file
+- **Packaging by entity or feature** — top-level packages are organized by domain entity (e.g., `account`, `message`) or feature (e.g., `feature-home`). Within each package, sub-packages are organized by responsibility (`model/`, `repository/`, `usecase/`)
 
 ## Gotchas
 - Navigation 3 uses `NavDisplay` + `entryProvider`, NOT `NavHost` from old navigation
