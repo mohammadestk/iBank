@@ -51,6 +51,7 @@ import dev.esteki.ibank.core.domain.transaction.model.Transaction
 import dev.esteki.ibank.core.domain.transaction.model.TransactionIcon
 import dev.esteki.ibank.core.presentation.R
 import dev.esteki.ibank.core.presentation.theme.IBankTheme
+import dev.esteki.ibank.core.presentation.theme.MonoFontFamily
 import dev.esteki.ibank.feature.search.model.SearchIntent
 import dev.esteki.ibank.feature.search.model.SearchResult
 import dev.esteki.ibank.feature.search.model.SearchUiState
@@ -160,7 +161,7 @@ internal fun SearchTopBar() {
     ) {
         Text(
             text = "Search",
-            style = MaterialTheme.typography.headlineSmall,
+            style = MaterialTheme.typography.headlineMedium,
         )
     }
 }
@@ -464,7 +465,9 @@ private fun AccountItem(
             }
             Text(
                 text = formatCurrency(account.balance),
-                style = MaterialTheme.typography.labelLarge,
+                style = MaterialTheme.typography.labelLarge.copy(
+                    fontFamily = MonoFontFamily,
+                ),
             )
         }
     }
@@ -513,6 +516,7 @@ private fun TransactionItem(
             text = formatTransactionAmount(transaction.amount, transaction.isPositive),
             style = MaterialTheme.typography.labelLarge.copy(
                 color = if (transaction.isPositive) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                fontFamily = MonoFontFamily,
             ),
         )
     }

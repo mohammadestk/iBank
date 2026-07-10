@@ -37,6 +37,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -107,7 +108,7 @@ internal fun SettingsContent(
         item {
             Text(
                 text = "Settings",
-                style = MaterialTheme.typography.headlineSmall,
+                style = MaterialTheme.typography.headlineMedium,
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
             )
         }
@@ -194,8 +195,8 @@ private fun SettingsSection(
         Text(
             text = section.title.uppercase(),
             style = MaterialTheme.typography.labelSmall.copy(
-                fontWeight = FontWeight.Bold,
-                letterSpacing = MaterialTheme.typography.labelSmall.letterSpacing,
+                fontWeight = FontWeight.Normal,
+                letterSpacing = 0.06.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             ),
             modifier = Modifier.padding(bottom = 8.dp),

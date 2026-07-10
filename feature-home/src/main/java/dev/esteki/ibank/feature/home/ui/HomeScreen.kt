@@ -43,6 +43,7 @@ import dev.esteki.ibank.core.domain.transaction.model.TransactionIcon
 import dev.esteki.ibank.feature.home.model.HomeIntent
 import dev.esteki.ibank.feature.home.model.HomeResult
 import dev.esteki.ibank.feature.home.model.HomeUiState
+import dev.esteki.ibank.core.presentation.theme.MonoFontFamily
 import dev.esteki.ibank.feature.home.viewmodel.HomeViewModel
 import java.text.NumberFormat
 import java.util.*
@@ -198,6 +199,7 @@ private fun BalanceCard(
                 text = formatCurrency(account.balance, account.currency),
                 style = MaterialTheme.typography.displayLarge.copy(
                     color = MaterialTheme.colorScheme.onPrimary,
+                    fontFamily = MonoFontFamily,
                 ),
             )
             Spacer(modifier = Modifier.height(12.dp))
@@ -330,7 +332,7 @@ private fun TransactionItem(
         Column(modifier = Modifier.weight(1f)) {
             Text(
                 text = transaction.name,
-                style = MaterialTheme.typography.bodyLarge.copy(
+                style = MaterialTheme.typography.bodySmall.copy(
                     fontWeight = FontWeight.SemiBold,
                 ),
             )
@@ -345,6 +347,7 @@ private fun TransactionItem(
             text = formatTransactionAmount(transaction.amount, transaction.isPositive),
             style = MaterialTheme.typography.labelLarge.copy(
                 color = if (transaction.isPositive) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                fontFamily = MonoFontFamily,
             ),
         )
     }

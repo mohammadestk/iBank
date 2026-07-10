@@ -1,19 +1,28 @@
 package dev.esteki.ibank.core.presentation.theme
 
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.ReadOnlyComposable
-import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import dev.esteki.ibank.core.presentation.R
 
 // Font families
-val DisplayFontFamily = FontFamily.Default // Manrope
-val BodyFontFamily = FontFamily.Default    // Inter
-val MonoFontFamily = FontFamily.Monospace  // JetBrains Mono
+val DisplayFontFamily = FontFamily(
+    Font(R.font.manrope_variable_font_wght, FontWeight.Normal),
+    Font(R.font.manrope_variable_font_wght, FontWeight.SemiBold),
+    Font(R.font.manrope_variable_font_wght, FontWeight.Bold),
+    Font(R.font.manrope_variable_font_wght, FontWeight.ExtraBold),
+)
+val BodyFontFamily = FontFamily(
+    Font(R.font.inter_variable_font_opsz_wght, FontWeight.Normal),
+    Font(R.font.inter_variable_font_opsz_wght, FontWeight.SemiBold),
+)
+val MonoFontFamily = FontFamily(
+    Font(R.font.jetbrainsmono_variable_font_wght, FontWeight.Normal),
+    Font(R.font.jetbrainsmono_variable_font_wght, FontWeight.SemiBold),
+)
 
 // M3 Typography
 val Typography = Typography(
@@ -29,6 +38,12 @@ val Typography = Typography(
         fontWeight = FontWeight.Bold,
         fontSize = 32.sp,
         lineHeight = 40.sp,
+    ),
+    headlineMedium = TextStyle(
+        fontFamily = DisplayFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 28.sp,
+        lineHeight = 36.sp,
     ),
     headlineSmall = TextStyle(
         fontFamily = DisplayFontFamily,

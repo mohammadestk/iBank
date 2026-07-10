@@ -121,7 +121,7 @@ private fun MessageTopBar(
     ) {
         Text(
             text = "Messages",
-            style = MaterialTheme.typography.headlineSmall,
+            style = MaterialTheme.typography.headlineMedium,
         )
         IconButton(onClick = onSearchClick) {
             Icon(
