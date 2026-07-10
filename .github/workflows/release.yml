@@ -30,6 +30,7 @@ jobs:
     name: Build Release
     needs: unit-tests
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: actions/checkout@v4
 
