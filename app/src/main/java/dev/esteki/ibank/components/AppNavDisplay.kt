@@ -6,6 +6,7 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.entryProvider
+import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import dev.esteki.ibank.BottomRoute
 import dev.esteki.ibank.feature.home.ui.HomeScreen
@@ -21,7 +22,10 @@ fun AppNavDisplay(
     NavDisplay(
         modifier = modifier,
         backStack = backStack,
-        entryDecorators = listOf(rememberViewModelStoreNavEntryDecorator()),
+        entryDecorators = listOf(
+            rememberViewModelStoreNavEntryDecorator(),
+            rememberSaveableStateHolderNavEntryDecorator()
+        ),
         onBack = { backStack.removeLastOrNull() },
         entryProvider = entryProvider {
             entry<BottomRoute.Home> { key ->
