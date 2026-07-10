@@ -2,7 +2,7 @@
 agp = "9.2.1"
 coil = "3.5.0"
 coreKtx = "1.19.0"
-hilt = "2.60"
+hilt = "2.60.1"
 hiltNavigationCompose = "1.4.0"
 ksp = "2.3.9"
 junit = "4.13.2"
@@ -20,7 +20,7 @@ truth = "1.4.5"
 mockk = "1.14.11"
 turbine = "1.2.1"
 coroutinesTest = "1.11.0"
-annotation = "1.9.1"
+annotation = "1.10.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
